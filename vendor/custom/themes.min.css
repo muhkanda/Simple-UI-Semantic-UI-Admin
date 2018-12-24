@@ -1,0 +1,7 @@
+/* themes.min.css
+# MK ADMIN By Muh Kanda Wibawa Putra
+# This Template Is FREE!
+# Released under the MIT license
+# http://opensource.org/licenses/MIT
+# For Information : surel.muhkanda@gmail.com
+*/html,body{background-color:#EDF1F5;height:100%;width:100%;margin:0;padding:0}#itemfont{color:#FFF}#menucolored{background-color:#78909C}.adminimage{border-radius:50%}#adminimage-navbar{max-height:90px;max-width:90px;height:90px;width:90px;margin-left:auto;margin-right:auto;border-radius:50%}.rapihkan{margin:0 10px}.menu-rapih-top{margin-top:40px}.menu-rapih-bottom{margin-bottom:350px}#menucolored #itemfont .menu .item>p{color:#54667A}.justifed{text-align:justify}#sidebar{position:fixed;top:2em;left:0;padding:0;background-color:#FFF}#sidebar .ui.menu{margin:0 0}#sidebar .ui.menu>a.item,#sidebar .ui.menu>div.item{margin:0 .5em;color:#54667A}#sidebar .ui.menu .ui.item .menu a.item>p,#sidebar .ui.menu .ui.item .ui.moredropdown{color:#54667A}#content{top:4.5em;padding-bottom:8em}.parentmiddle{display:table;width:100%;height:100%}#middle{display:table-cell;text-align:center;vertical-align:middle}#redly{background-color:#e53935}#teally{background-color:#009688}#bluely{background-color:#1976d2}#yellowly{background-color:#ffb300}#yellowly,#bluely,#teally,#redly{color:#EDF1F5}.colorly{padding:20px}.labelfull{width:100%;text-align:center}.konten{padding:20px;min-height:100%;margin:0 auto -50px}.footer,.push{height:50px}*{box-sizing:border-box}footer{background:#42A5F5;color:white;line-height:50px;padding:0 20px}.hidden{display:none}
