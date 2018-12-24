@@ -1,13 +1,16 @@
 INTRODUCTION
 ============
 
-**MK ADMIN** is a free admin template Based on [Semantic-UI](https://semantic-ui.com/) framework, Highly customizable and easy to use.
+**MK ADMIN** is a free responsive admin template Based on [Semantic-UI](https://semantic-ui.com/) framework, Highly customizable and easy to use.
 
 ### SCREENSHOT :
 
+##### Computer View :
 !["Computer View"](https://i.ibb.co/k3dmZvH/Screenshot-9.png "Computer View")
 
-!["Tablet View"](https://i.ibb.co/6tkGJ0Q/Screenshot-2018-12-24-ADMIN-MK-ADMIN.png "Tablet View") !["Tablet View"](https://i.ibb.co/F4jWbmj/Screenshot-2018-12-25-ADMIN-MK-ADMIN.png "Tablet View")
+##### Tablet View :
+!["Tablet View"](https://i.ibb.co/6tkGJ0Q/Screenshot-2018-12-24-ADMIN-MK-ADMIN.png "Tablet View")
+!["Tablet View"](https://i.ibb.co/F4jWbmj/Screenshot-2018-12-25-ADMIN-MK-ADMIN.png "Tablet View")
 
 ### LICENSE :
 
