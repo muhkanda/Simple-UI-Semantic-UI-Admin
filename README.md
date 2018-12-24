@@ -13,4 +13,4 @@ INTRODUCTION
 
 #### Reaching Out
 
-If you'd like to start a conversation about Semantic feel free to e-mail me at [surel.muhkanda@gmail.com](mailto:jack@surel.muhkanda@gmail.com)
+If you'd like to start a conversation about Semantic feel free to e-mail me at [surel.muhkanda@gmail.com](mailto:surel.muhkanda@gmail.com)
