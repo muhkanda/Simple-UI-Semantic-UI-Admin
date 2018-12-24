@@ -1,7 +1,7 @@
 INTRODUCTION
 ============
 
-**MK ADMIN** is a free admin template Based on [Semantic-UI](http://www.semantic-ui.com) framework, Highly customizable and easy to use.
+**MK ADMIN** is a free admin template Based on [Semantic-UI](https://semantic-ui.com/) framework, Highly customizable and easy to use.
 
 ### SCREENSHOT :
 
@@ -11,6 +11,13 @@ INTRODUCTION
 
 **MK ADMIN** is a free admin template that is licensed under [MIT](http://opensource.org/licenses/MIT).
 
-#### REACHING OUT :
+### CREDITS :
 
-If you'd like to start a conversation about MK ADMIN feel free to e-mail me at [surel.muhkanda@gmail.com](mailto:surel.muhkanda@gmail.com)
+- [Semantic-UI](https://semantic-ui.com/)
+- [Chart.js](https://www.chartjs.org/)
+- [Jquery](https://jquery.com/)
+- [DataTables](https://datatables.net/)
+
+### REACHING OUT :
+
+If you would like to start a conversation about MK ADMIN feel free to e-mail me at [surel.muhkanda@gmail.com](mailto:surel.muhkanda@gmail.com)
