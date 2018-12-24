@@ -7,7 +7,7 @@ INTRODUCTION
 
 !["Computer View"](https://i.ibb.co/k3dmZvH/Screenshot-9.png "Computer View")
 
-!["Tablet View"](https://i.ibb.co/y49qLrL/Screenshot-2018-12-24-ADMIN-MK-ADMIN.png "Tablet View") !["Tablet View"](https://i.ibb.co/fvsY8pM/Screenshot-2018-12-25-ADMIN-MK-ADMIN.png "Tablet View") 
+!["Tablet View"](https://i.ibb.co/6tkGJ0Q/Screenshot-2018-12-24-ADMIN-MK-ADMIN.png "Tablet View") !["Tablet View"](https://i.ibb.co/F4jWbmj/Screenshot-2018-12-25-ADMIN-MK-ADMIN.png "Tablet View")
 
 ### LICENSE :
 
