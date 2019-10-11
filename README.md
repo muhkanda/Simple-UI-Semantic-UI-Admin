@@ -1,7 +1,7 @@
-INTRODUCTION
+SimpleUI
 ============
 
-**MK ADMIN** is a free responsive admin template Based on [Semantic-UI](https://semantic-ui.com/) framework, Highly customizable and easy to use.
+**SimpleUI** is a free responsive admin template Based on [Semantic-UI](https://semantic-ui.com/).  This template uses the default Semantic UI 2.4.2 and uses several libraries such as [Jquery](https://jquery.com/), [Chart.js](https://www.chartjs.org/), [DataTables](https://datatables.net/) and more.
 
 ### SCREENSHOT :
 
