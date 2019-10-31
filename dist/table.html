@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+	<meta name="robots" content="all,follow">
+	<title>SIMPLE-UI Admin Templates</title>
+	<link rel="icon" href="images/logo.png" sizes="32x32">
+	<!-- inject:css -->
+  	<link rel="stylesheet" href="vendors/fomantic-ui/semantic.min.css">
+  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-se/css/dataTables.semanticui.min.css">
+  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-responsive-se/css/responsive.semanticui.min.css">
+  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-buttons-se/css/buttons.semanticui.min.css">
+  	<link rel="stylesheet" href="css/main.css">
+  	<!-- endinject -->
+</head>
+<body>
+	<div class="ui grid">
+		<div class="row">
+			<div class="ui grid">
+				<!-- BEGIN NAVBAR -->
+				<!-- computer only navbar -->
+				<div class="computer only row">
+					<div class="column">
+						<div class="ui top fixed menu navcolor">
+							<div class="item">
+								<img src="images/logo.png" alt="SimpleIU">
+							</div>
+							<div class="left menu">
+								<div class="nav item">
+									<strong class="navtext">SIMPLE-UI</strong>
+								</div>
+							</div>
+							<div class="ui top pointing dropdown admindropdown link item right">
+								<img class="imgrad" src="images/user.png" alt="">
+								<span class="clear navtext"><strong>ACCOUNT</strong></span>
+								<i class="dropdown icon navtext"></i>
+								<div class="menu">
+									<div class="item"><p><i class="settings icon"></i>Account Setting</p></div>
+									<div class="item"><p><i class="sign out alternate icon"></i>Logout</p></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end computer only navbar -->
+				<!-- mobile and tablet only navbar -->
+				<div class="tablet mobile only row">
+					<div class="column">
+				    <div class="ui top fixed menu navcolor">
+						<a id="showmobiletabletsidebar" class="item navtext"><i class="content icon"></i></a>
+						<div class="right menu">
+							<div class="item">
+								<strong class="navtext">SIMPLE-UI</strong>
+							</div>
+							<div class="item">
+								<img src="images/logo.png">
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+				<!-- end mobile and tablet only navbar -->
+				<!-- END NAVBAR -->
+
+				<!-- BEGIN SIDEBAR -->
+				<!-- mobile and tablet only sidebar -->
+				<div class="tablet mobile only row">
+					<div id="mobiletabletsidebar" class="mobiletabletsidebar animate hidden">
+						<div class="ui left fixed vertical menu scrollable">
+							<div class="item">
+								<table>
+									<tr>
+										<td>
+											<img class="ui mini image" src="images/logo.png">
+										</td>
+										<td>
+											<span class="clear"><strong>SIMPLE-UI</strong></span>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<a class="item" href="index.html"><i class="home icon"></i> Dashboard</a>
+							<a class="item" href="table.html"><i class="table icon"></i> Table</a>
+							<a class="item"><i class="settings icon"></i> Settings</a>	
+							<a class="item"><i class="sign out alternate icon"></i> Logout</a>
+							<a class="item" href="https://semantic-ui.com/"><i class="heart icon"></i>More Components</a>
+							<div class="item" id="hidemobiletabletsidebar">
+								<button class="fluid ui button">
+									Close
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- end mobile and tablet only sidebar -->
+				<!-- computer only sidebar -->
+				<div class="computer only row">
+					<div class="left floated three wide computer column" id="computersidebar">
+						<div class="ui vertical fluid menu scrollable" id="simplefluid">
+							<div class="clearsidebar"></div>
+							<div class="item">
+								<img src="images/user.png" id="sidebar-image">
+							</div>
+							<a class="item" href="index.html"><i class="home icon"></i> Dashboard</a>
+							<a class="item" href="table.html"><i class="table icon"></i> Table</a>
+							<div class="ui right pointing dropdown sidebardropdown link item">
+								<i class="angle right icon"></i>
+								Apps
+								<div class="menu">
+									<a class="item"><p><i class="instagram icon"></i> Instagram</p></a>
+									<a class="item"><p><i class="telegram icon"></i> Telegram</p></a>
+									<a class="item"><p><i class="whatsapp icon"></i> Whatsapp</p></a>
+									<a class="item"><p><i class="steam icon"></i> Steam</p></a>
+								</div>
+							</div>			
+							<div class="ui item">
+								<div class="ui fluid selection dropdown moredropdown">
+									<div class="text">Menu</div>
+									<i class="dropdown icon"></i>
+									<div class="menu">
+										<p class="item">Choice 1</p>
+										<p class="item">Choice 2</p>
+									</div>
+								</div>
+							</div>
+							<a class="item"><i class="settings icon"></i> Settings</a>	
+							<a class="item"><i class="sign out alternate icon"></i> Logout</a>
+							<a class="item" href="https://semantic-ui.com/"><i class="heart icon"></i>More Components</a>
+							<a class="item"></a>
+						</div>
+					</div>
+				</div>
+				<!-- end computer only sidebar -->
+				<!-- END SIDEBAR -->
+			</div>
+		</div>
+		<!-- BEGIN CONTEN -->
+		<div class="right floated thirteen wide computer sixteen wide phone column" id="content">
+			<div class="ui container grid">
+				<div class="row">
+					<div class="fifteen wide computer sixteen wide phone centered column">
+						<h2><i class="table icon"></i> TABLE EXAMPLE</h2>
+						<div class="ui divider"></div>
+						<div class="ui grid">
+							<div class="sixteen wide computer sixteen wide phone centered column">
+								<div class="ui positive message">
+									<i class="close icon"></i>
+									<div class="header">
+										Great News!
+									</div>
+									<p>This example page shows DataTables integrated with this template.</p>
+								</div>
+								<h4></h4>
+								<!-- BEGIN DATATABLE -->
+								<div class="ui stacked segment">
+									<div class="ui blue ribbon icon label">DATATABLE SUPPORT</div>
+									<br><br>
+									<table id="example" class="ui celled table responsive nowrap unstackable" style="width:100%">
+									    <thead>
+									        <tr>
+									            <th>First name</th>
+									            <th>Last name</th>
+									            <th>Position</th>
+									            <th>Office</th>
+									            <th>Age</th>
+									            <th>Start date</th>
+									            <th>Salary</th>
+									            <th>Extn.</th>
+									            <th>E-mail</th>
+									        </tr>
+									    </thead>
+									    <tbody>
+									        <tr>
+									            <td>Tiger</td>
+									            <td>Nixon</td>
+									            <td>System Architect</td>
+									            <td>Edinburgh</td>
+									            <td>61</td>
+									            <td>2011/04/25</td>
+									            <td>$320,800</td>
+									            <td>5421</td>
+									            <td>t.nixon@datatables.net</td>
+									        </tr>
+									        <tr>
+									            <td>Garrett</td>
+									            <td>Winters</td>
+									            <td>Accountant</td>
+									            <td>Tokyo</td>
+									            <td>63</td>
+									            <td>2011/07/25</td>
+									            <td>$170,750</td>
+									            <td>8422</td>
+									            <td>g.winters@datatables.net</td>
+									        </tr>
+									        <tr>
+									            <td>Ashton</td>
+									            <td>Cox</td>
+									            <td>Junior Technical Author</td>
+									            <td>San Francisco</td>
+									            <td>66</td>
+									            <td>2009/01/12</td>
+									            <td>$86,000</td>
+									            <td>1562</td>
+									            <td>a.cox@datatables.net</td>
+									        </tr>
+									        <tr>
+									            <td>Cedric</td>
+									            <td>Kelly</td>
+									            <td>Senior Javascript Developer</td>
+									            <td>Edinburgh</td>
+									            <td>22</td>
+									            <td>2012/03/29</td>
+									            <td>$433,060</td>
+									            <td>6224</td>
+									            <td>c.kelly@datatables.net</td>
+									        </tr>
+									        <tr>
+									            <td>Airi</td>
+									            <td>Satou</td>
+									            <td>Accountant</td>
+									            <td>Tokyo</td>
+									            <td>33</td>
+									            <td>2008/11/28</td>
+									            <td>$162,700</td>
+									            <td>5407</td>
+									            <td>a.satou@datatables.net</td>
+									        </tr>
+									    </tbody>
+									</table>
+								</div>
+								<!-- END DATATABLE -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- END CONTENT -->
+	</div>
+</body>
+<!-- inject:js -->
+<script src="vendors/jquery/jquery.min.js"></script>
+<script src="vendors/fomantic-ui/semantic.min.js"></script>
+<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-se/js/dataTables.semanticui.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-responsive-se/js/responsive.semanticui.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+<script src="vendors/datatables.net/datatables.net-buttons-se/js/buttons.semanticui.min.js"></script>
+<script src="vendors/jszip/jszip.min.js"></script>
+<script src="vendors/pdfmake/pdfmake.min.js"></script>
+<script src="vendors/pdfmake/vfs_fonts.js"></script>
+<script src="js/main.js"></script>
+<!-- endinject -->
+<script>
+$('.message .close')
+  .on('click', function() {
+    $(this)
+      .closest('.message')
+      .transition('fade')
+    ;
+  })
+;
+</script>
+</html>

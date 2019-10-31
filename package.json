@@ -1,0 +1,50 @@
+{
+  "name": "simpleui-admin-templates",
+  "version": "1.0.0",
+  "description": "Free Admin Templates Based Semantic-UI Framework",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HelloPutra/SimpleUI-Semantic-UI-Admin.git"
+  },
+  "keywords": [
+    "Free",
+    "Admin",
+    "Template",
+    "Admin",
+    "Template",
+    "SemanticUI",
+    "HTML",
+    "CSS",
+    "JS",
+    "FomanticUI"
+  ],
+  "author": "HelloPutra (Muh Kanda)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HelloPutra/SimpleUI-Semantic-UI-Admin/issues"
+  },
+  "homepage": "https://github.com/HelloPutra/SimpleUI-Semantic-UI-Admin#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "chart.js": "^2.8.0",
+    "datatables.net-buttons-se": "^1.6.1",
+    "datatables.net-responsive-se": "^2.2.3",
+    "datatables.net-se": "^1.10.20",
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-inject": "^5.0.4",
+    "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-useref": "^4.0.0",
+    "jquery": "^3.4.1",
+    "jszip": "^3.2.2",
+    "pdfmake": "^0.1.60"
+  },
+  "dependencies": {
+    "fomantic-ui": "^2.7.8"
+  }
+}

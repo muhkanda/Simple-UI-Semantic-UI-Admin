@@ -1,0 +1,62 @@
+{
+  "_from": "datatables.net-se",
+  "_id": "datatables.net-se@1.10.20",
+  "_inBundle": false,
+  "_integrity": "sha512-LUQ5PAq6Pw9jp9ZaPxVF4ALIMn/V3ptdWYYsw3UNJ+fSOIV5GbQSjSTtbe1F/8yvS9Ryc8xsVfB1g4ZezFgmvw==",
+  "_location": "/datatables.net-se",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "datatables.net-se",
+    "name": "datatables.net-se",
+    "escapedName": "datatables.net-se",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/datatables.net-se/-/datatables.net-se-1.10.20.tgz",
+  "_shasum": "f0dba2b75aaa6054fd5726c3bb475208ddcaf070",
+  "_spec": "datatables.net-se",
+  "_where": "D:\\New-Simple-UI",
+  "author": {
+    "name": "SpryMedia Ltd",
+    "url": "http://datatables.net"
+  },
+  "bugs": {
+    "url": "https://datatables.net/forums"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "datatables.net": "1.10.20",
+    "jquery": ">=1.7"
+  },
+  "deprecated": false,
+  "description": "DataTables for jQuery with styling for [Semantic UI](http://semantic-ui.com/)",
+  "files": [
+    "css/**/*.css",
+    "js/**/*.js"
+  ],
+  "homepage": "https://datatables.net",
+  "keywords": [
+    "filter",
+    "sort",
+    "DataTables",
+    "jQuery",
+    "table",
+    "Semantic UI"
+  ],
+  "license": "MIT",
+  "main": "js/dataTables.semanticui.js",
+  "name": "datatables.net-se",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DataTables/Dist-DataTables-SemanticUI.git"
+  },
+  "style": "css/dataTables.semanticui.css",
+  "version": "1.10.20"
+}

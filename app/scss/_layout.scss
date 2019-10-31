@@ -1,0 +1,93 @@
+/* - DEFINE STYLE */
+html, body {
+	background-color : $contentBg;
+	height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+.navcolor {
+	background-color : $navColor !important;
+}
+.navtext {
+	color 			 : $navText !important;
+}
+.clear {
+	margin 			 : $clearMrg;
+}
+.imgrad {
+	border-radius	 : $imgRad;
+}
+.hidden { 
+	display 		 : none;
+}
+.clearsidebar {
+	margin-top 		 : 40px;
+}
+#sidebar-image {
+	max-height 		 : $simgSize;
+	max-width 		 : $simgSize;
+	height 			 : $simgSize;
+	width 			 : $simgSize;
+	margin-left 	 : auto;
+	margin-right 	 : auto;
+	border-radius 	 : $imgRad;
+}
+#computersidebar {
+	position 		 : fixed;
+	top 			 : 1em;
+	left 			 : 0;
+	padding 		 : 0;
+	bottom 			 : 0;
+	background-color : #FFF;
+}
+.scrollable {
+	overflow-y 		 : auto;
+	overflow-x 		 : hidden;
+}
+
+#simplefluid {
+	height 			 : 100%;
+	border-bottom 	 : 0 none !important;
+	box-shadow 		 : none;
+}
+#content {
+	top 		 	 : 1em;
+}
+
+.simpleimage {
+	color: #fff;
+	text-align: center;
+}
+
+.itemcolor1 {
+	background-color: $itemColor1;
+}
+
+.itemcolor2 {
+	background-color: $itemColor2;
+}
+
+.itemcolor3 {
+	background-color: $itemColor3;
+}
+
+.itemcolor4 {
+	background-color: $itemColor4;
+}
+
+i.simpleicon.simpleicon.simpleicon.icon, i.simpleicon.simpleicon.simpleicon.icons {
+    line-height: 1.6;
+    font-size: 3em;
+    width: 100%;
+    height: 100%;
+}
+
+.simplelable{
+	width: 100%; text-align: center;
+}

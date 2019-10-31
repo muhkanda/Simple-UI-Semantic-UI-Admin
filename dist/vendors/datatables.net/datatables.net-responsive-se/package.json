@@ -1,0 +1,58 @@
+{
+  "_from": "datatables.net-responsive-se",
+  "_id": "datatables.net-responsive-se@2.2.3",
+  "_inBundle": false,
+  "_integrity": "sha512-ck/ZkgBZA2dDOHakaruErosrSsAbBhEEKlwyyg/IYPyLrWpua+3A0N108uC3I8fnP8gJRc8PP1odsLROZGphmQ==",
+  "_location": "/datatables.net-responsive-se",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "datatables.net-responsive-se",
+    "name": "datatables.net-responsive-se",
+    "escapedName": "datatables.net-responsive-se",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/datatables.net-responsive-se/-/datatables.net-responsive-se-2.2.3.tgz",
+  "_shasum": "617ea45565da189f91459ea9d46771f1abb5803f",
+  "_spec": "datatables.net-responsive-se",
+  "_where": "D:\\New-Simple-UI",
+  "author": {
+    "name": "SpryMedia Ltd",
+    "url": "http://datatables.net"
+  },
+  "bugs": {
+    "url": "https://datatables.net/forums"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "datatables.net-responsive": "2.2.3",
+    "datatables.net-se": "^1.10.15",
+    "jquery": ">=1.7"
+  },
+  "deprecated": false,
+  "description": "Responsive for DataTables with styling for [Semantic UI](http://semantic-ui.com/)",
+  "files": [
+    "css/**/*.css",
+    "js/**/*.js"
+  ],
+  "homepage": "https://datatables.net",
+  "keywords": [
+    "responsive",
+    "DataTables",
+    "jQuery",
+    "table",
+    "Semantic UI"
+  ],
+  "license": "MIT",
+  "main": "js/responsive.semanticui.js",
+  "name": "datatables.net-responsive-se",
+  "style": "css/responsive.semanticui.css",
+  "version": "2.2.3"
+}

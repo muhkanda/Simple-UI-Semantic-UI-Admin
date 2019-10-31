@@ -1,0 +1,94 @@
+/*
+# SimpleUI By Muh Kanda Wibawa Putra
+# Github : https://github.com/HelloPutra
+# This Template Is FREE!
+# Released under the MIT license
+# http://opensource.org/licenses/MIT
+# For Information : surel.muhkanda@gmail.com
+*/
+/* - DEFINE VARIABLE */
+/* - DEFINE STYLE */
+html, body {
+  background-color: #eeeeee;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0; }
+
+canvas {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none; }
+
+.navcolor {
+  background-color: #0097a7 !important; }
+
+.navtext {
+  color: #ffffff !important; }
+
+.clear {
+  margin: 0px 10px; }
+
+.imgrad {
+  border-radius: 50%; }
+
+.hidden {
+  display: none; }
+
+.clearsidebar {
+  margin-top: 40px; }
+
+#sidebar-image {
+  max-height: 90px;
+  max-width: 90px;
+  height: 90px;
+  width: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50%; }
+
+#computersidebar {
+  position: fixed;
+  top: 1em;
+  left: 0;
+  padding: 0;
+  bottom: 0;
+  background-color: #FFF; }
+
+.scrollable {
+  overflow-y: auto;
+  overflow-x: hidden; }
+
+#simplefluid {
+  height: 100%;
+  border-bottom: 0 none !important;
+  box-shadow: none; }
+
+#content {
+  top: 1em; }
+
+.simpleimage {
+  color: #fff;
+  text-align: center; }
+
+.itemcolor1 {
+  background-color: #ef5350 !important; }
+
+.itemcolor2 {
+  background-color: #1976d2 !important; }
+
+.itemcolor3 {
+  background-color: #009688 !important; }
+
+.itemcolor4 {
+  background-color: #ffb300 !important; }
+
+i.simpleicon.simpleicon.simpleicon.icon, i.simpleicon.simpleicon.simpleicon.icons {
+  line-height: 1.6;
+  font-size: 3em;
+  width: 100%;
+  height: 100%; }
+
+.simplelable {
+  width: 100%;
+  text-align: center; }
