@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HelloPutra/SimpleUI-Semantic-UI-Admin.git"
+    "url": "git+https://github.com/HelloPutra/Simple-UI-Semantic-UI-Admin.git"
   },
   "keywords": [
     "Free",
@@ -25,9 +25,9 @@
   "author": "HelloPutra (Muh Kanda)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/HelloPutra/SimpleUI-Semantic-UI-Admin/issues"
+    "url": "https://github.com/HelloPutra/Simple-UI-Semantic-UI-Admin/issues"
   },
-  "homepage": "https://github.com/HelloPutra/SimpleUI-Semantic-UI-Admin#readme",
+  "homepage": "https://github.com/HelloPutra/Simple-UI-Semantic-UI-Admin#readme",
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "chart.js": "^2.8.0",
