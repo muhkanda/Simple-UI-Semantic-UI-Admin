@@ -163,20 +163,15 @@ function styleInject(done){
         paths.chartJs.js, paths.chartJs.utils, paths.chartJs.example, // - ChartJS
         // - DataTables
         paths.dataTables.dest + 'js/jquery.dataTables.min.js', 
-        paths.dataTables.destSe + 'css/dataTables.semanticui.min.css', 
-        paths.dataTables.destSe + 'js/dataTables.semanticui.min.js',
+        paths.dataTables.destSe + '**/*.min.*',
         paths.dataTables.destRes + 'js/dataTables.responsive.min.js',
-        paths.dataTables.destrSe + 'css/responsive.semanticui.min.css',
-        paths.dataTables.destrSe + 'js/responsive.semanticui.min.js',
+        paths.dataTables.destrSe + '**/*.min.*',
         paths.dataTables.destBtn + 'js/dataTables.buttons.min.js',
-        paths.dataTables.destBtn + 'js/buttons.html5.min.js',
-        paths.dataTables.destBtn + 'js/buttons.print.min.js',
-        paths.dataTables.destBtn + 'js/buttons.colVis.min.js',
-        paths.dataTables.destbtSe + 'css/buttons.semanticui.min.css',
-        paths.dataTables.destbtSe + 'js/buttons.semanticui.min.js',
+        paths.dataTables.destBtn + 'js/buttons.!(flash).min.js',
+        paths.dataTables.destbtSe + '**/*.min.*',
         // - End DataTables
         paths.jsZip.dest + 'jszip.min.js', // - JsZip
-        paths.pdfMake.dest + 'pdfmake.min.js', paths.pdfMake.dest + 'vfs_fonts.js', // - PdfMake
+        paths.pdfMake.dest + '**/!(pdfmake).js', // - PdfMake
         paths.css.dest + 'main.css', paths.js.dest + 'main.js' // - Simple-UI
         ]);
     var injectOptions   = {
@@ -216,14 +211,16 @@ function suWatch(){
 }
 
 function suDev(done){
-    gulp.series(cpJquery)();
-    gulp.series(cpFomantic)();
-    gulp.series(cpDatatables)();
-    gulp.series(cpjsZip)();
-    gulp.series(cppdfMake)();
-    gulp.series(cpJs)();
-    gulp.series(cpChartJs)();
-    gulp.series(cpImg)();
+    gulp.series([
+        cpJquery,
+        cpFomantic,
+        cpDatatables,
+        cpjsZip,
+        cppdfMake,
+        cpJs,
+        cpChartJs,
+        cpImg
+        ])();
     gulp.series(styleInject);
     done()
 }
