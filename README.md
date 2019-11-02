@@ -1,5 +1,5 @@
 ## Hello!
-Don't forget to watch, star or fork this template because we will update this template as soon as we can 😄🙈
+Don't forget to watch, star or fork this template because i will update this template as soon as i can 😄🙈
 
 -----
 
