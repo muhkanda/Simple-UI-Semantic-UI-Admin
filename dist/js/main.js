@@ -1,3 +1,11 @@
+/*
+# SimpleUI By Muh Kanda Wibawa Putra (HelloPutra)
+# Github : https://github.com/HelloPutra
+# This Template Is FREE!
+# Released under the MIT license
+# http://opensource.org/licenses/MIT
+# For Information : surel.muhkanda@gmail.com
+*/
 var $duration = 1000;
 $(document).ready(function(){
 	// - ACCOUNT DROPDOWN
