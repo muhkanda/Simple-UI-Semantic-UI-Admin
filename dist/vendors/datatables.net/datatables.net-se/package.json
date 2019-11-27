@@ -1,28 +1,35 @@
 {
-  "_from": "datatables.net-se",
+  "_args": [
+    [
+      "datatables.net-se@1.10.20",
+      "D:\\Simple-UI-Semantic-UI-Admin"
+    ]
+  ],
+  "_development": true,
+  "_from": "datatables.net-se@1.10.20",
   "_id": "datatables.net-se@1.10.20",
   "_inBundle": false,
   "_integrity": "sha512-LUQ5PAq6Pw9jp9ZaPxVF4ALIMn/V3ptdWYYsw3UNJ+fSOIV5GbQSjSTtbe1F/8yvS9Ryc8xsVfB1g4ZezFgmvw==",
   "_location": "/datatables.net-se",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "datatables.net-se",
+    "raw": "datatables.net-se@1.10.20",
     "name": "datatables.net-se",
     "escapedName": "datatables.net-se",
-    "rawSpec": "",
+    "rawSpec": "1.10.20",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "1.10.20"
   },
   "_requiredBy": [
     "#DEV:/",
-    "#USER"
+    "/datatables.net-buttons-se",
+    "/datatables.net-responsive-se"
   ],
   "_resolved": "https://registry.npmjs.org/datatables.net-se/-/datatables.net-se-1.10.20.tgz",
-  "_shasum": "f0dba2b75aaa6054fd5726c3bb475208ddcaf070",
-  "_spec": "datatables.net-se",
-  "_where": "D:\\New-Simple-UI",
+  "_spec": "1.10.20",
+  "_where": "D:\\Simple-UI-Semantic-UI-Admin",
   "author": {
     "name": "SpryMedia Ltd",
     "url": "http://datatables.net"
@@ -30,12 +37,10 @@
   "bugs": {
     "url": "https://datatables.net/forums"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "datatables.net": "1.10.20",
     "jquery": ">=1.7"
   },
-  "deprecated": false,
   "description": "DataTables for jQuery with styling for [Semantic UI](http://semantic-ui.com/)",
   "files": [
     "css/**/*.css",

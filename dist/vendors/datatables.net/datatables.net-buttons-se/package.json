@@ -1,28 +1,33 @@
 {
-  "_from": "datatables.net-buttons-se",
+  "_args": [
+    [
+      "datatables.net-buttons-se@1.6.1",
+      "D:\\Simple-UI-Semantic-UI-Admin"
+    ]
+  ],
+  "_development": true,
+  "_from": "datatables.net-buttons-se@1.6.1",
   "_id": "datatables.net-buttons-se@1.6.1",
   "_inBundle": false,
   "_integrity": "sha512-3BfIl1+jL3ttl8aOIj8i+tTiEvmFNMeeXfiQ1ncFWpTCmnbMipiL929aJQ6trLz/lCZnSfS0UZ1e4sfanrptzA==",
   "_location": "/datatables.net-buttons-se",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "datatables.net-buttons-se",
+    "raw": "datatables.net-buttons-se@1.6.1",
     "name": "datatables.net-buttons-se",
     "escapedName": "datatables.net-buttons-se",
-    "rawSpec": "",
+    "rawSpec": "1.6.1",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "1.6.1"
   },
   "_requiredBy": [
-    "#DEV:/",
-    "#USER"
+    "#DEV:/"
   ],
   "_resolved": "https://registry.npmjs.org/datatables.net-buttons-se/-/datatables.net-buttons-se-1.6.1.tgz",
-  "_shasum": "4483bbbbbea2bb5d99e0133065d1f967e1a69164",
-  "_spec": "datatables.net-buttons-se",
-  "_where": "D:\\New-Simple-UI",
+  "_spec": "1.6.1",
+  "_where": "D:\\Simple-UI-Semantic-UI-Admin",
   "author": {
     "name": "SpryMedia Ltd",
     "url": "http://datatables.net"
@@ -30,13 +35,11 @@
   "bugs": {
     "url": "https://datatables.net/forums"
   },
-  "bundleDependencies": false,
   "dependencies": {
     "datatables.net-buttons": "1.6.1",
     "datatables.net-se": "^1.10.15",
     "jquery": ">=1.7"
   },
-  "deprecated": false,
   "description": "Buttons for DataTables with styling for [Semantic UI](http://semantic-ui.com/)",
   "files": [
     "css/**/*.css",
