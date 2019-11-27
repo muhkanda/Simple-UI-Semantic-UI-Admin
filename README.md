@@ -14,7 +14,7 @@ Don't forget to watch, star or fork this template because i will update this tem
 <span align="center">
 
 ![GitHub Last Commit](https://img.shields.io/badge/Last%20Commit-November%202019-green.svg?logo=github&style=flat-square)
-![Repo Size](https://img.shields.io/badge/Repo%20Size-26%20MB-blue.svg?style=flat-square)
+![Repo Size](https://img.shields.io/badge/Repo%20Size-27%20MB-blue.svg?style=flat-square)
 [![LICENSE](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
 </span>
