@@ -1,5 +1,5 @@
 ## Hello!
-Don't forget to watch, star or fork this template because i will update this template as soon as i can 😄🙈
+Don't forget to watch, star or fork this template because i will update this template as soon as i can :blush: :laughing:
 
 -----
 
@@ -32,7 +32,7 @@ Don't forget to watch, star or fork this template because i will update this tem
 
 ### Built With
 
-- [![Fomantic-UI](https://img.shields.io/badge/Fomantic--UI-%5E2.7.8-%2300b4f0.svg?style=flat-square)](https://fomantic-ui.com/)
+- [![Fomantic-UI](https://img.shields.io/badge/Fomantic--UI-%5E2.8.2-%2300b4f0.svg?style=flat-square)](https://fomantic-ui.com/)
 - [![Jquery](https://img.shields.io/badge/Jquery-%5E3.4.1-blue.svg?style=flat-square)](https://jquery.com/)
 - [![DataTables](https://img.shields.io/badge/DataTables-1.10.20-blue.svg?style=flat-square)](https://datatables.net/)
 - [![ChartJs](https://img.shields.io/badge/ChartJs-%5E2.8.0-deeppink.svg?style=flat-square)](https://www.chartjs.org/)
