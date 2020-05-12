@@ -160,7 +160,7 @@ function styleInject(done){
 	var injectFiles     = gulp.src([
         paths.jquery.js, // - Jquery
         paths.fomantic.css, paths.fomantic.js, // - Fomantic-UI
-        paths.chartJs.js, paths.chartJs.utils, paths.chartJs.example, // - ChartJS
+        // paths.chartJs.js, paths.chartJs.utils, paths.chartJs.example, // - ChartJS
         // - DataTables
         paths.dataTables.dest + 'js/jquery.dataTables.min.js', 
         paths.dataTables.destSe + '**/*.min.*',

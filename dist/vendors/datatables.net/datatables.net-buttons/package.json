@@ -1,33 +1,27 @@
 {
-  "_args": [
-    [
-      "datatables.net-buttons@1.6.1",
-      "D:\\Simple-UI-Semantic-UI-Admin"
-    ]
-  ],
-  "_development": true,
-  "_from": "datatables.net-buttons@1.6.1",
-  "_id": "datatables.net-buttons@1.6.1",
+  "_from": "datatables.net-buttons@1.6.2",
+  "_id": "datatables.net-buttons@1.6.2",
   "_inBundle": false,
-  "_integrity": "sha512-Lcgvi/xGB2X0jr1n/uQMmg43Z1JQO6aaGjPHO+sAQAMfBGBi9cK1hhfM4Vg8gzC5fz3sW4QrtjAdKvOPnQ1A3w==",
+  "_integrity": "sha512-0sKWBBwtCCECRc4T+fUDhFCJv9miLPrB90QsVYq4ep0hIMuWiW76+eCdykZq5yd/3m7K1O+ryt9c7PahBDf91g==",
   "_location": "/datatables.net-buttons",
   "_phantomChildren": {},
   "_requested": {
     "type": "version",
     "registry": true,
-    "raw": "datatables.net-buttons@1.6.1",
+    "raw": "datatables.net-buttons@1.6.2",
     "name": "datatables.net-buttons",
     "escapedName": "datatables.net-buttons",
-    "rawSpec": "1.6.1",
+    "rawSpec": "1.6.2",
     "saveSpec": null,
-    "fetchSpec": "1.6.1"
+    "fetchSpec": "1.6.2"
   },
   "_requiredBy": [
     "/datatables.net-buttons-se"
   ],
-  "_resolved": "https://registry.npmjs.org/datatables.net-buttons/-/datatables.net-buttons-1.6.1.tgz",
-  "_spec": "1.6.1",
-  "_where": "D:\\Simple-UI-Semantic-UI-Admin",
+  "_resolved": "https://registry.npmjs.org/datatables.net-buttons/-/datatables.net-buttons-1.6.2.tgz",
+  "_shasum": "491bf5a808898c468d0b3a6547e3be6883aaebcc",
+  "_spec": "datatables.net-buttons@1.6.2",
+  "_where": "D:\\Simple-UI-Semantic-UI-Admin\\node_modules\\datatables.net-buttons-se",
   "author": {
     "name": "SpryMedia Ltd",
     "url": "http://datatables.net"
@@ -35,10 +29,12 @@
   "bugs": {
     "url": "https://datatables.net/forums"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "datatables.net": "^1.10.15",
     "jquery": ">=1.7"
   },
+  "deprecated": false,
   "description": "Buttons for DataTables ",
   "files": [
     "js/**/*.js",
@@ -64,5 +60,5 @@
     "type": "git",
     "url": "git+https://github.com/DataTables/Dist-DataTables-Buttons.git"
   },
-  "version": "1.6.1"
+  "version": "1.6.2"
 }

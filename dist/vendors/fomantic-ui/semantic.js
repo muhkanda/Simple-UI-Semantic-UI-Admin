@@ -1,5 +1,5 @@
  /*
- * # Fomantic UI - 2.8.2
+ * # Fomantic UI - 2.8.4
  * https://github.com/fomantic/Fomantic-UI
  * http://fomantic-ui.com/
  *
@@ -599,6 +599,9 @@ $.fn.form = function(parameters) {
             module.verbose('Initializing form validation', $module, settings);
             module.bindEvents();
             module.set.defaults();
+            if (settings.autoCheckRequired) {
+              module.set.autoCheck();
+            }
             module.instantiate();
           }
         },
@@ -1046,7 +1049,7 @@ $.fn.form = function(parameters) {
               name
             ;
             if(requiresValue) {
-              prompt = prompt.replace('{value}', $field.val());
+              prompt = prompt.replace(/\{value\}/g, $field.val());
             }
             if(requiresName) {
               $label = $field.closest(selector.group).find('label').eq(0);
@@ -1054,10 +1057,10 @@ $.fn.form = function(parameters) {
                 ? $label.text()
                 : $field.prop('placeholder') || settings.text.unspecifiedField
               ;
-              prompt = prompt.replace('{name}', name);
+              prompt = prompt.replace(/\{name\}/g, name);
             }
-            prompt = prompt.replace('{identifier}', field.identifier);
-            prompt = prompt.replace('{ruleValue}', ancillary);
+            prompt = prompt.replace(/\{identifier\}/g, field.identifier);
+            prompt = prompt.replace(/\{ruleValue\}/g, ancillary);
             if(!rule.prompt) {
               module.verbose('Using default validation prompt for type', prompt, ruleName);
             }
@@ -1207,7 +1210,7 @@ $.fn.form = function(parameters) {
                 }
                 else {
                   if(isRadio) {
-                    if(values[name] === undefined || values[name] == false) {
+                    if(values[name] === undefined || values[name] === false) {
                       values[name] = (isChecked)
                         ? value || true
                         : false
@@ -1322,26 +1325,36 @@ $.fn.form = function(parameters) {
             module.add.field(name, rules);
           },
           field: function(name, rules) {
+            // Validation should have at least a standard format
+            if(validation[name] === undefined || validation[name].rules === undefined) {
+              validation[name] = {
+                rules: []
+              };
+            }
             var
-              newValidation = {}
+              newValidation = {
+                rules: []
+              }
             ;
             if(module.is.shorthandRules(rules)) {
               rules = Array.isArray(rules)
                 ? rules
                 : [rules]
               ;
-              newValidation[name] = {
-                rules: []
-              };
-              $.each(rules, function(index, rule) {
-                newValidation[name].rules.push({ type: rule });
+              $.each(rules, function(_index, rule) {
+                newValidation.rules.push({ type: rule });
               });
             }
             else {
-              newValidation[name] = rules;
+              newValidation.rules = rules.rules;
             }
-            validation = $.extend({}, validation, newValidation);
-            module.debug('Adding rules', newValidation, validation);
+            // For each new rule, check if there's not already one with the same type
+            $.each(newValidation.rules, function (_index, rule) {
+              if ($.grep(validation[name].rules, function(item){ return item.type == rule.type; }).length == 0) {
+                validation[name].rules.push(rule);
+              }
+            });
+            module.debug('Adding rules', newValidation.rules, validation);
           },
           fields: function(fields) {
             var
@@ -1610,6 +1623,32 @@ $.fn.form = function(parameters) {
           asDirty: function() {
             module.set.defaults();
             module.set.dirty();
+          },
+          autoCheck: function() {
+            module.debug('Enabling auto check on required fields');
+            $field.each(function (_index, el) {
+              var
+                $el        = $(el),
+                $elGroup   = $(el).closest($group),
+                isCheckbox = ($el.filter(selector.checkbox).length > 0),
+                isRequired = $el.prop('required') || $elGroup.hasClass(className.required) || $elGroup.parent().hasClass(className.required),
+                isDisabled = $el.prop('disabled') || $elGroup.hasClass(className.disabled) || $elGroup.parent().hasClass(className.disabled),
+                validation = module.get.validation($el),
+                hasEmptyRule = validation
+                  ? $.grep(validation.rules, function(rule) { return rule.type == "empty" }) !== 0
+                  : false,
+                identifier = validation.identifier || $el.attr('id') || $el.attr('name') || $el.data(metadata.validate)
+              ;
+              if (isRequired && !isDisabled && !hasEmptyRule && identifier !== undefined) {
+                if (isCheckbox) {
+                  module.verbose("Adding 'checked' rule on field", identifier);
+                  module.add.rule(identifier, "checked");
+                } else {
+                  module.verbose("Adding 'empty' rule on field", identifier);
+                  module.add.rule(identifier, "empty");
+                }
+              }
+            });
           }
         },
 
@@ -1949,6 +1988,7 @@ $.fn.form.settings = {
   transition        : 'scale',
   duration          : 200,
 
+  autoCheckRequired : false,
   preventLeaving    : false,
   dateHandling      : 'date', // 'date', 'input', 'formatter'
 
@@ -2029,10 +2069,12 @@ $.fn.form.settings = {
   },
 
   className : {
-    error   : 'error',
-    label   : 'ui basic red pointing prompt label',
-    pressed : 'down',
-    success : 'success'
+    error    : 'error',
+    label    : 'ui basic red pointing prompt label',
+    pressed  : 'down',
+    success  : 'success',
+    required : 'required',
+    disabled : 'disabled'
   },
 
   error: {
@@ -3940,15 +3982,38 @@ $.fn.calendar = function(parameters) {
 
         helper: {
           isDisabled: function(date, mode) {
-            return mode === 'day' && ((settings.disabledDaysOfWeek.indexOf(date.getDay()) !== -1) || settings.disabledDates.some(function(d){
+            return (mode === 'day' || mode === 'month' || mode === 'year') && ((settings.disabledDaysOfWeek.indexOf(date.getDay()) !== -1) || settings.disabledDates.some(function(d){
               if(typeof d === 'string') {
                 d = module.helper.sanitiseDate(d);
               }
               if (d instanceof Date) {
                 return module.helper.dateEqual(date, d, mode);
               }
-              if (d !== null && typeof d === 'object' && d[metadata.date]) {
-                return module.helper.dateEqual(date, module.helper.sanitiseDate(d[metadata.date]), mode);
+              if (d !== null && typeof d === 'object') {
+                if (d[metadata.year]) {
+                  if (typeof d[metadata.year] === 'number') {
+                    return date.getFullYear() == d[metadata.year];
+                  } else if (Array.isArray(d[metadata.year])) {
+                    return d[metadata.year].indexOf(date.getFullYear()) > -1;
+                  }
+                } else if (d[metadata.month]) {
+                  if (typeof d[metadata.month] === 'number') {
+                    return date.getMonth() == d[metadata.month];
+                  } else if (Array.isArray(d[metadata.month])) {
+                    return d[metadata.month].indexOf(date.getMonth()) > -1;
+                  } else if (d[metadata.month] instanceof Date) {
+                    var sdate = module.helper.sanitiseDate(d[metadata.month]);
+                    return (date.getMonth() == sdate.getMonth()) && (date.getFullYear() == sdate.getFullYear())
+                  }
+                } else if (d[metadata.date] && mode === 'day') {
+                  if (d[metadata.date] instanceof Date) {
+                    return module.helper.dateEqual(date, module.helper.sanitiseDate(d[metadata.date]), mode);
+                  } else if (Array.isArray(d[metadata.date])) {
+                    return d[metadata.date].some(function(idate) {
+                      return module.helper.dateEqual(date, idate, mode);
+                    });
+                  }
+                }
               }
             }));
           },
@@ -3970,10 +4035,9 @@ $.fn.calendar = function(parameters) {
             }
           },
           findDayAsObject: function(date, mode, dates) {
-            if (mode === 'day') {
-              var i = 0, il = dates.length;
+            if (mode === 'day' || mode === 'month' || mode === 'year') {
               var d;
-              for (; i < il; i++) {
+              for (var i = 0; i < dates.length; i++) {
                 d = dates[i];
                 if(typeof d === 'string') {
                   d = module.helper.sanitiseDate(d);
@@ -3983,8 +4047,37 @@ $.fn.calendar = function(parameters) {
                   dateObject[metadata.date] = d;
                   return dateObject;
                 }
-                else if (d !== null && typeof d === 'object' && d[metadata.date] && module.helper.dateEqual(date,module.helper.sanitiseDate(d[metadata.date]), mode)  ) {
-                  return d;
+                else if (d !== null && typeof d === 'object') {
+                  if (d[metadata.year]) {
+                    if (typeof d[metadata.year] === 'number' && date.getFullYear() == d[metadata.year]) {
+                      return d;
+                    } else if (Array.isArray(d[metadata.year])) {
+                      if (d[metadata.year].indexOf(date.getFullYear()) > -1) {
+                        return d;
+                      }
+                    }
+                  } else if (d[metadata.month]) {
+                    if (typeof d[metadata.month] === 'number' && date.getMonth() == d[metadata.month]) {
+                      return d;
+                    } else if (Array.isArray(d[metadata.month])) {
+                      if (d[metadata.month].indexOf(date.getMonth()) > -1) {
+                        return d;
+                      }
+                    } else if (d[metadata.month] instanceof Date) {
+                      var sdate = module.helper.sanitiseDate(d[metadata.month]);
+                      if ((date.getMonth() == sdate.getMonth()) && (date.getFullYear() == sdate.getFullYear())) {
+                        return d;
+                      }
+                    }
+                  } else if (d[metadata.date] && mode === 'day') {
+                    if (d[metadata.date] instanceof Date && module.helper.dateEqual(date, module.helper.sanitiseDate(d[metadata.date]), mode)) {
+                      return d;
+                    } else if (Array.isArray(d[metadata.date])) {
+                      if(d[metadata.date].some(function(idate) { return module.helper.dateEqual(date, idate, mode); })) {
+                        return d;
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -4671,7 +4764,9 @@ $.fn.calendar.settings = {
     type: 'type',
     monthOffset: 'monthOffset',
     message: 'message',
-    class: 'class'
+    class: 'class',
+    month: 'month',
+    year: 'year'
   },
 
   eventClass: 'blue'
@@ -4856,7 +4951,7 @@ $.fn.checkbox = function(parameters) {
         },
 
         preventDefaultOnInputTarget: function() {
-          if(typeof event !== 'undefined' && $(event.target).is(selector.input)) {
+          if(typeof event !== 'undefined' && event !== null && $(event.target).is(selector.input)) {
             module.verbose('Preventing default check action after manual check action');
             event.preventDefault();
           }
@@ -6343,6 +6438,10 @@ $.fn.dropdown = function(parameters) {
     moduleSelector = $allModules.selector || '',
 
     hasTouch       = ('ontouchstart' in document.documentElement),
+    clickEvent      = hasTouch
+        ? 'touchstart'
+        : 'click',
+
     time           = new Date().getTime(),
     performance    = [],
 
@@ -6877,26 +6976,9 @@ $.fn.dropdown = function(parameters) {
 
         bind: {
           events: function() {
-            if(hasTouch) {
-              module.bind.touchEvents();
-            }
             module.bind.keyboardEvents();
             module.bind.inputEvents();
             module.bind.mouseEvents();
-          },
-          touchEvents: function() {
-            module.debug('Touch device detected binding additional touch events');
-            if( module.is.searchSelection() ) {
-              // do nothing special yet
-            }
-            else if( module.is.single() ) {
-              $module
-                .on('touchstart' + eventNamespace, module.event.test.toggle)
-              ;
-            }
-            $menu
-              .on('touchstart' + eventNamespace, selector.item, module.event.item.mouseenter)
-            ;
           },
           keyboardEvents: function() {
             module.verbose('Binding keyboard events');
@@ -6924,8 +7006,8 @@ $.fn.dropdown = function(parameters) {
             module.verbose('Binding mouse events');
             if(module.is.multiple()) {
               $module
-                .on('click'   + eventNamespace, selector.label,  module.event.label.click)
-                .on('click'   + eventNamespace, selector.remove, module.event.remove.click)
+                .on(clickEvent   + eventNamespace, selector.label,  module.event.label.click)
+                .on(clickEvent   + eventNamespace, selector.remove, module.event.remove.click)
               ;
             }
             if( module.is.searchSelection() ) {
@@ -6934,24 +7016,24 @@ $.fn.dropdown = function(parameters) {
                 .on('mouseup'   + eventNamespace, module.event.mouseup)
                 .on('mousedown' + eventNamespace, selector.menu,   module.event.menu.mousedown)
                 .on('mouseup'   + eventNamespace, selector.menu,   module.event.menu.mouseup)
-                .on('click'     + eventNamespace, selector.icon,   module.event.icon.click)
-                .on('click'     + eventNamespace, selector.clearIcon, module.event.clearIcon.click)
+                .on(clickEvent  + eventNamespace, selector.icon,   module.event.icon.click)
+                .on(clickEvent  + eventNamespace, selector.clearIcon, module.event.clearIcon.click)
                 .on('focus'     + eventNamespace, selector.search, module.event.search.focus)
-                .on('click'     + eventNamespace, selector.search, module.event.search.focus)
+                .on(clickEvent  + eventNamespace, selector.search, module.event.search.focus)
                 .on('blur'      + eventNamespace, selector.search, module.event.search.blur)
-                .on('click'     + eventNamespace, selector.text,   module.event.text.focus)
+                .on(clickEvent  + eventNamespace, selector.text,   module.event.text.focus)
               ;
               if(module.is.multiple()) {
                 $module
-                  .on('click' + eventNamespace, module.event.click)
+                  .on(clickEvent + eventNamespace, module.event.click)
                 ;
               }
             }
             else {
               if(settings.on == 'click') {
                 $module
-                  .on('click' + eventNamespace, selector.icon, module.event.icon.click)
-                  .on('click' + eventNamespace, module.event.test.toggle)
+                  .on(clickEvent + eventNamespace, selector.icon, module.event.icon.click)
+                  .on(clickEvent + eventNamespace, module.event.test.toggle)
                 ;
               }
               else if(settings.on == 'hover') {
@@ -6969,7 +7051,7 @@ $.fn.dropdown = function(parameters) {
                 .on('mousedown' + eventNamespace, module.event.mousedown)
                 .on('mouseup'   + eventNamespace, module.event.mouseup)
                 .on('focus'     + eventNamespace, module.event.focus)
-                .on('click'     + eventNamespace, selector.clearIcon, module.event.clearIcon.click)
+                .on(clickEvent  + eventNamespace, selector.clearIcon, module.event.clearIcon.click)
               ;
               if(module.has.menuSearch() ) {
                 $module
@@ -6983,7 +7065,7 @@ $.fn.dropdown = function(parameters) {
               }
             }
             $menu
-              .on('mouseenter' + eventNamespace, selector.item, module.event.item.mouseenter)
+              .on((hasTouch ? 'touchstart' : 'mouseenter') + eventNamespace, selector.item, module.event.item.mouseenter)
               .on('mouseleave' + eventNamespace, selector.item, module.event.item.mouseleave)
               .on('click'      + eventNamespace, selector.item, module.event.item.click)
             ;
@@ -6997,7 +7079,7 @@ $.fn.dropdown = function(parameters) {
               ;
             }
             $document
-              .on('click' + elementNamespace, module.event.test.hide)
+              .on(clickEvent + elementNamespace, module.event.test.hide)
             ;
           }
         },
@@ -7012,7 +7094,7 @@ $.fn.dropdown = function(parameters) {
               ;
             }
             $document
-              .off('click' + elementNamespace)
+              .off(clickEvent + elementNamespace)
             ;
           }
         },
@@ -7160,6 +7242,10 @@ $.fn.dropdown = function(parameters) {
                   text,
                   value
                 ;
+                if($choice.hasClass(className.unfilterable)) {
+                  results.push(this);
+                  return true;
+                }
                 if(settings.match === 'both' || settings.match === 'text') {
                   text = module.remove.diacritics(String(module.get.choiceText($choice, false)));
                   if(text.search(beginsWithRegExp) !== -1) {
@@ -7329,7 +7415,7 @@ $.fn.dropdown = function(parameters) {
                 var
                   value = settings.templates.deQuote(item[fields.value]),
                   name = settings.templates.escape(
-                    item[fields.name] || item[fields.value],
+                    item[fields.name] || '',
                     settings.preserveHTML
                   )
                 ;
@@ -8287,6 +8373,9 @@ $.fn.dropdown = function(parameters) {
                     value    = ( $option.attr('value') !== undefined )
                       ? $option.attr('value')
                       : name,
+                    text     = ( $option.data(metadata.text) !== undefined )
+                      ? $option.data(metadata.text)
+                      : name,
                     group = $option.parent('optgroup')
                   ;
                   if(settings.placeholder === 'auto' && value === '') {
@@ -8304,6 +8393,7 @@ $.fn.dropdown = function(parameters) {
                     select.values.push({
                       name     : name,
                       value    : value,
+                      text     : text,
                       disabled : disabled
                     });
                   }
@@ -8392,7 +8482,7 @@ $.fn.dropdown = function(parameters) {
                     return;
                   }
                   if(isMultiple) {
-                    if($.inArray( String(optionValue), value) !== -1) {
+                    if($.inArray(module.escape.htmlEntities(String(optionValue)), value.map(function(v){return String(v);})) !== -1) {
                       $selectedItem = ($selectedItem)
                         ? $selectedItem.add($choice)
                         : $choice
@@ -8411,7 +8501,7 @@ $.fn.dropdown = function(parameters) {
                       optionValue = optionValue.toLowerCase();
                       value = value.toLowerCase();
                     }
-                    if( String(optionValue) == String(value)) {
+                    if(module.escape.htmlEntities(String(optionValue)) === module.escape.htmlEntities(String(value))) {
                       module.verbose('Found select item by value', optionValue, value);
                       $selectedItem = $choice;
                       return true;
@@ -9384,6 +9474,7 @@ $.fn.dropdown = function(parameters) {
               values = module.get.values(),
               newValue
             ;
+            removedValue = module.escape.htmlEntities(removedValue);
             if( module.has.selectInput() ) {
               module.verbose('Input is <select> removing selected option', removedValue);
               newValue = module.remove.arrayValue(removedValue, values);
@@ -9973,10 +10064,9 @@ $.fn.dropdown = function(parameters) {
           },
           htmlEntities: function(string) {
               var
-                  badChars     = /[&<>"'`]/g,
+                  badChars     = /[<>"'`]/g,
                   shouldEscape = /[&<>"'`]/,
                   escape       = {
-                      "&": "&amp;",
                       "<": "&lt;",
                       ">": "&gt;",
                       '"': "&quot;",
@@ -9988,6 +10078,7 @@ $.fn.dropdown = function(parameters) {
                   }
               ;
               if(shouldEscape.test(string)) {
+                  string = string.replace(/&(?![a-z0-9#]{1,6};)/, "&amp;");
                   return string.replace(badChars, escapedChar);
               }
               return string;
@@ -10384,7 +10475,8 @@ $.fn.dropdown.settings = {
     delete      : 'delete',
     header      : 'header',
     divider     : 'divider',
-    groupIcon   : ''
+    groupIcon   : '',
+    unfilterable : 'unfilterable'
   }
 
 };
@@ -10399,10 +10491,9 @@ $.fn.dropdown.settings.templates = {
       return string;
     }
     var
-        badChars     = /[&<>"'`]/g,
+        badChars     = /[<>"'`]/g,
         shouldEscape = /[&<>"'`]/,
         escape       = {
-          "&": "&amp;",
           "<": "&lt;",
           ">": "&gt;",
           '"': "&quot;",
@@ -10414,6 +10505,7 @@ $.fn.dropdown.settings.templates = {
         }
     ;
     if(shouldEscape.test(string)) {
+      string = string.replace(/&(?![a-z0-9#]{1,6};)/, "&amp;");
       return string.replace(badChars, escapedChar);
     }
     return string;
@@ -10469,10 +10561,10 @@ $.fn.dropdown.settings.templates = {
         if(option[fields.icon]) {
           html += '<i class="'+deQuote(option[fields.icon])+' '+(option[fields.iconClass] ? deQuote(option[fields.iconClass]) : className.icon)+'"></i>';
         }
-        html +=   escape(option[fields.name] || option[fields.value],preserveHTML);
+        html +=   escape(option[fields.name] || '', preserveHTML);
         html += '</div>';
       } else if (itemType === 'header') {
-        var groupName = escape(option[fields.name],preserveHTML),
+        var groupName = escape(option[fields.name] || '', preserveHTML),
             groupIcon = option[fields.icon] ? deQuote(option[fields.icon]) : className.groupIcon
         ;
         if(groupName !== '' || groupIcon !== '') {
@@ -11933,7 +12025,15 @@ $.fn.modal = function(parameters) {
             return module.cache.leftBodyScrollbar;
           },
           useFlex: function() {
-            return settings.useFlex && settings.detachable && !module.is.ie();
+            if (settings.useFlex === 'auto') {
+              return settings.detachable && !module.is.ie();
+            }
+            if(settings.useFlex && module.is.ie()) {
+              module.debug('useFlex true is not supported in IE');
+            } else if(settings.useFlex && !settings.detachable) {
+              module.debug('useFlex true in combination with detachable false is not supported');
+            }
+            return settings.useFlex;
           },
           fit: function() {
             var
@@ -14416,10 +14516,9 @@ $.fn.popup.settings = {
   templates: {
     escape: function(string) {
       var
-        badChars     = /[&<>"'`]/g,
+        badChars     = /[<>"'`]/g,
         shouldEscape = /[&<>"'`]/,
         escape       = {
-          "&": "&amp;",
           "<": "&lt;",
           ">": "&gt;",
           '"': "&quot;",
@@ -14431,6 +14530,7 @@ $.fn.popup.settings = {
         }
       ;
       if(shouldEscape.test(string)) {
+        string = string.replace(/&(?![a-z0-9#]{1,6};)/, "&amp;");
         return string.replace(badChars, escapedChar);
       }
       return string;
@@ -15826,7 +15926,7 @@ $.fn.slider = function(parameters) {
                 newPos = module.determine.pos(eventPos)
               ;
               // Special handling if range mode and both thumbs have the same value
-              if(module.is.range() && settings.preventCrossover && module.thumbVal === module.secondThumbVal) {
+              if(settings.preventCrossover && module.is.range() && module.thumbVal === module.secondThumbVal) {
                 initialPosition = newPos;
                 $currThumb = undefined;
               } else {
@@ -15854,13 +15954,13 @@ $.fn.slider = function(parameters) {
                 thumbSmoothVal = module.determine.smoothValueFromEvent(event)
               ;
               if(!$currThumb.hasClass('second')) {
-                if(settings.preventCrossover) {
+                if(settings.preventCrossover && module.is.range()) {
                   value = Math.min(secondThumbVal, value);
                   thumbSmoothVal = Math.min(secondThumbVal, thumbSmoothVal);
                 }
                 thumbVal = value;
               } else {
-                if(settings.preventCrossover) {
+                if(settings.preventCrossover && module.is.range()) {
                   value = Math.max(thumbVal, value);
                   thumbSmoothVal = Math.max(thumbVal, thumbSmoothVal);
                 }
@@ -15882,7 +15982,7 @@ $.fn.slider = function(parameters) {
             module.unbind.slidingEvents();
           },
           keydown: function(event, first) {
-            if(module.is.range() && settings.preventCrossover && module.thumbVal === module.secondThumbVal) {
+            if(settings.preventCrossover && module.is.range() && module.thumbVal === module.secondThumbVal) {
               $currThumb = undefined;
             }
             if(module.is.focused()) {
@@ -16427,12 +16527,12 @@ $.fn.slider = function(parameters) {
                 $currThumb = newValue <= module.get.currentThumbValue() ? $thumb : $secondThumb;
               }
               if(!$currThumb.hasClass('second')) {
-                if(settings.preventCrossover) {
+                if(settings.preventCrossover && module.is.range()) {
                   newValue = Math.min(module.secondThumbVal, newValue);
                 }
                 module.thumbVal = newValue;
               } else {
-                if(settings.preventCrossover) {
+                if(settings.preventCrossover && module.is.range()) {
                   newValue = Math.max(module.thumbVal, newValue);
                 }
                 module.secondThumbVal = newValue;
@@ -18740,10 +18840,9 @@ $.fn.search.settings = {
         return string;
       }
       var
-        badChars     = /[&<>"'`]/g,
+        badChars     = /[<>"'`]/g,
         shouldEscape = /[&<>"'`]/,
         escape       = {
-          "&": "&amp;",
           "<": "&lt;",
           ">": "&gt;",
           '"': "&quot;",
@@ -18755,6 +18854,7 @@ $.fn.search.settings = {
         }
       ;
       if(shouldEscape.test(string)) {
+        string = string.replace(/&(?![a-z0-9#]{1,6};)/, "&amp;");
         return string.replace(badChars, escapedChar);
       }
       return string;
@@ -23143,13 +23243,15 @@ $.fn.toast = function(parameters) {
                   onBeforeHide: function(callback){
                       callback = $.isFunction(callback)?callback : function(){};
                       if(settings.transition.closeEasing !== ''){
-                          $toastBox.css('opacity',0);
-                          $toastBox.wrap('<div/>').parent().slideUp(500,settings.transition.closeEasing,function(){
-                            if($toastBox){
-                              $toastBox.parent().remove();
-                              callback.call($toastBox);
-                            }
-                          });
+                          if($toastBox) {
+                            $toastBox.css('opacity', 0);
+                            $toastBox.wrap('<div/>').parent().slideUp(500, settings.transition.closeEasing, function () {
+                              if ($toastBox) {
+                                $toastBox.parent().remove();
+                                callback.call($toastBox);
+                              }
+                            });
+                          }
                       } else {
                         callback.call($toastBox);
                       }
@@ -23273,10 +23375,9 @@ $.fn.toast = function(parameters) {
               return string;
             }
             var
-              badChars     = /[&<>"'`]/g,
+              badChars     = /[<>"'`]/g,
               shouldEscape = /[&<>"'`]/,
               escape       = {
-                "&": "&amp;",
                 "<": "&lt;",
                 ">": "&gt;",
                 '"': "&quot;",
@@ -23288,6 +23389,7 @@ $.fn.toast = function(parameters) {
               }
             ;
             if(shouldEscape.test(string)) {
+              string = string.replace(/&(?![a-z0-9#]{1,6};)/, "&amp;");
               return string.replace(badChars, escapedChar);
             }
             return string;

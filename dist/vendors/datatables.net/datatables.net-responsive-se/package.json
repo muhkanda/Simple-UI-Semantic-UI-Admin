@@ -1,32 +1,26 @@
 {
-  "_args": [
-    [
-      "datatables.net-responsive-se@2.2.3",
-      "D:\\Simple-UI-Semantic-UI-Admin"
-    ]
-  ],
-  "_development": true,
-  "_from": "datatables.net-responsive-se@2.2.3",
-  "_id": "datatables.net-responsive-se@2.2.3",
+  "_from": "datatables.net-responsive-se@^2.2.4",
+  "_id": "datatables.net-responsive-se@2.2.4",
   "_inBundle": false,
-  "_integrity": "sha512-ck/ZkgBZA2dDOHakaruErosrSsAbBhEEKlwyyg/IYPyLrWpua+3A0N108uC3I8fnP8gJRc8PP1odsLROZGphmQ==",
+  "_integrity": "sha512-846+kTjKwPuKjXW82OletP+geSwy+FhL8DjYHXGpfWubLIUGls+sHBqIHMGM0plpiKBqJvHuxFvHNque/wGR6A==",
   "_location": "/datatables.net-responsive-se",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "datatables.net-responsive-se@2.2.3",
+    "raw": "datatables.net-responsive-se@^2.2.4",
     "name": "datatables.net-responsive-se",
     "escapedName": "datatables.net-responsive-se",
-    "rawSpec": "2.2.3",
+    "rawSpec": "^2.2.4",
     "saveSpec": null,
-    "fetchSpec": "2.2.3"
+    "fetchSpec": "^2.2.4"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/datatables.net-responsive-se/-/datatables.net-responsive-se-2.2.3.tgz",
-  "_spec": "2.2.3",
+  "_resolved": "https://registry.npmjs.org/datatables.net-responsive-se/-/datatables.net-responsive-se-2.2.4.tgz",
+  "_shasum": "7ae5dfc370b7576896728ead409a9214e35ae075",
+  "_spec": "datatables.net-responsive-se@^2.2.4",
   "_where": "D:\\Simple-UI-Semantic-UI-Admin",
   "author": {
     "name": "SpryMedia Ltd",
@@ -35,11 +29,13 @@
   "bugs": {
     "url": "https://datatables.net/forums"
   },
+  "bundleDependencies": false,
   "dependencies": {
-    "datatables.net-responsive": "2.2.3",
+    "datatables.net-responsive": "2.2.4",
     "datatables.net-se": "^1.10.15",
     "jquery": ">=1.7"
   },
+  "deprecated": false,
   "description": "Responsive for DataTables with styling for [Semantic UI](http://semantic-ui.com/)",
   "files": [
     "css/**/*.css",
@@ -57,5 +53,5 @@
   "main": "js/responsive.semanticui.js",
   "name": "datatables.net-responsive-se",
   "style": "css/responsive.semanticui.css",
-  "version": "2.2.3"
+  "version": "2.2.4"
 }

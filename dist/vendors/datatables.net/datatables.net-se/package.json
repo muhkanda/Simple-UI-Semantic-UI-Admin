@@ -1,34 +1,28 @@
 {
-  "_args": [
-    [
-      "datatables.net-se@1.10.20",
-      "D:\\Simple-UI-Semantic-UI-Admin"
-    ]
-  ],
-  "_development": true,
-  "_from": "datatables.net-se@1.10.20",
-  "_id": "datatables.net-se@1.10.20",
+  "_from": "datatables.net-se@^1.10.21",
+  "_id": "datatables.net-se@1.10.21",
   "_inBundle": false,
-  "_integrity": "sha512-LUQ5PAq6Pw9jp9ZaPxVF4ALIMn/V3ptdWYYsw3UNJ+fSOIV5GbQSjSTtbe1F/8yvS9Ryc8xsVfB1g4ZezFgmvw==",
+  "_integrity": "sha512-EZfBxEfsaoyV/cc8hjOIQWdaRi6h0BtA8VebJgWnYr1L/cUEG7k4BL8gRj2qFfCI2L97wEPcjgH5YeRRu8YUyw==",
   "_location": "/datatables.net-se",
   "_phantomChildren": {},
   "_requested": {
-    "type": "version",
+    "type": "range",
     "registry": true,
-    "raw": "datatables.net-se@1.10.20",
+    "raw": "datatables.net-se@^1.10.21",
     "name": "datatables.net-se",
     "escapedName": "datatables.net-se",
-    "rawSpec": "1.10.20",
+    "rawSpec": "^1.10.21",
     "saveSpec": null,
-    "fetchSpec": "1.10.20"
+    "fetchSpec": "^1.10.21"
   },
   "_requiredBy": [
     "#DEV:/",
     "/datatables.net-buttons-se",
     "/datatables.net-responsive-se"
   ],
-  "_resolved": "https://registry.npmjs.org/datatables.net-se/-/datatables.net-se-1.10.20.tgz",
-  "_spec": "1.10.20",
+  "_resolved": "https://registry.npmjs.org/datatables.net-se/-/datatables.net-se-1.10.21.tgz",
+  "_shasum": "91d3b7f044f14c39758df84d12663ef45d6c0564",
+  "_spec": "datatables.net-se@^1.10.21",
   "_where": "D:\\Simple-UI-Semantic-UI-Admin",
   "author": {
     "name": "SpryMedia Ltd",
@@ -37,10 +31,12 @@
   "bugs": {
     "url": "https://datatables.net/forums"
   },
+  "bundleDependencies": false,
   "dependencies": {
-    "datatables.net": "1.10.20",
+    "datatables.net": "1.10.21",
     "jquery": ">=1.7"
   },
+  "deprecated": false,
   "description": "DataTables for jQuery with styling for [Semantic UI](http://semantic-ui.com/)",
   "files": [
     "css/**/*.css",
@@ -63,5 +59,5 @@
     "url": "git+https://github.com/DataTables/Dist-DataTables-SemanticUI.git"
   },
   "style": "css/dataTables.semanticui.css",
-  "version": "1.10.20"
+  "version": "1.10.21"
 }
