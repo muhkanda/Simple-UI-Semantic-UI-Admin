@@ -29,22 +29,23 @@
   },
   "homepage": "https://github.com/HelloPutra/Simple-UI-Semantic-UI-Admin#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "chart.js": "^2.9.3",
-    "datatables.net-buttons-se": "^1.6.2",
-    "datatables.net-responsive-se": "^2.2.4",
-    "datatables.net-se": "^1.10.21",
-    "del": "^5.1.0",
+    "browser-sync": "^2.26.13",
+    "chart.js": "^2.9.4",
+    "datatables.net-buttons-se": "^1.6.5",
+    "datatables.net-responsive-se": "^2.2.6",
+    "datatables.net-se": "^1.10.22",
+    "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-inject": "^5.0.5",
     "gulp-sass": "^4.1.0",
     "gulp-sass-glob": "^1.1.0",
-    "gulp-useref": "^4.0.1",
+    "gulp-useref": "^5.0.0",
     "jquery": "^3.5.1",
-    "jszip": "^3.4.0",
-    "pdfmake": "^0.1.65"
+    "jszip": "^3.5.0",
+    "pdfmake": "^0.1.68"
   },
   "dependencies": {
-    "fomantic-ui": "^2.8.4"
+    "fomantic-ui": "^2.8.7",
+    "gulp-wait": "0.0.2"
   }
 }

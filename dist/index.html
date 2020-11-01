@@ -9,11 +9,11 @@
 	<link rel="icon" href="images/logo.png" sizes="32x32">
 	<!-- inject:css -->
   	<link rel="stylesheet" href="vendors/fomantic-ui/semantic.min.css">
-  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-se/css/dataTables.semanticui.min.css">
-  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-responsive-se/css/responsive.semanticui.min.css">
-  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-buttons-se/css/buttons.semanticui.min.css">
   	<link rel="stylesheet" href="css/main.css">
   	<!-- endinject -->
+  	<!-- chartjs:css -->
+	<link rel="stylesheet" href="vendors/chart.js/Chart.min.css">
+	<!-- endinject -->
 </head>
 <body>
 	<div class="ui grid">
@@ -34,7 +34,7 @@
 							</div>
 							<div class="ui top pointing dropdown admindropdown link item right">
 								<img class="imgrad" src="images/user.png" alt="">
-								<span class="clear navtext"><strong>ACCOUNT</strong></span>
+								<span class="clear navtext"><strong>Hi, Kabayan</strong></span>
 								<i class="dropdown icon navtext"></i>
 								<div class="menu">
 									<div class="item"><p><i class="settings icon"></i>Account Setting</p></div>
@@ -105,16 +105,14 @@
 							</div>
 							<a class="item" href="index.html"><i class="home icon"></i> Dashboard</a>
 							<a class="item" href="table.html"><i class="table icon"></i> Table</a>
-							<div class="ui right pointing dropdown sidebardropdown link item">
-								<i class="angle right icon"></i>
-								Apps
-								<div class="menu">
-									<a class="item"><p><i class="instagram icon"></i> Instagram</p></a>
-									<a class="item"><p><i class="telegram icon"></i> Telegram</p></a>
-									<a class="item"><p><i class="whatsapp icon"></i> Whatsapp</p></a>
-									<a class="item"><p><i class="steam icon"></i> Steam</p></a>
-								</div>
-							</div>			
+							<!-- Begin Simple Accordion -->
+							<div class="ui accordion simpleaccordion item">
+							    <div class="title titleaccordion item"><i class="dropdown icon"></i> Social Media</div>
+							    <div class="content contentaccordion">
+							        <a class="item itemaccordion" href="kelola_gaji.php"><i class="money bill alternate outline icon"></i> Pengelolaan Gaji Pegawai</a>
+							    </div>
+							</div>
+							<!-- End Simple Accordion -->
 							<div class="ui item">
 								<div class="ui fluid selection dropdown moredropdown">
 									<div class="text">Menu</div>
@@ -147,7 +145,7 @@
 							<!-- BEGIN STATISTIC ITEM -->
 							<!-- Begin Page Views -->
 							<div class="four wide computer sixteen wide phone centered column">
-								<div class="ui centered card">
+								<div class="ui raised segment">
 								    <div class="content">
 								        <div class="ui centered grid">
 								        	<div class="row">
@@ -169,7 +167,7 @@
 							<!-- End Page Views -->
 							<!-- Begin Messages -->
 							<div class="four wide computer sixteen wide phone centered column">
-								<div class="ui centered card">
+								<div class="ui raised segment">
 								    <div class="content">
 								        <div class="ui centered grid">
 								        	<div class="row">
@@ -191,7 +189,7 @@
 							<!-- End Messages -->
 							<!-- Begin Downloads -->
 							<div class="four wide computer sixteen wide phone centered column">
-								<div class="ui centered card">
+								<div class="ui raised segment">
 								    <div class="content">
 								        <div class="ui centered grid">
 								        	<div class="row">
@@ -213,7 +211,7 @@
 							<!-- End Downloads -->
 							<!-- Begin Users -->
 							<div class="four wide computer sixteen wide phone centered column">
-								<div class="ui centered card">
+								<div class="ui raised segment">
 								    <div class="content">
 								        <div class="ui centered grid">
 								        	<div class="row">
@@ -225,7 +223,7 @@
 								        		<div class="ten wide computer column">
 								        			<span><h4>Users</h4></span>
 								        			9578 Users
-								        			<a class="ui tiny label simplelable"><i class="eye icon"></i> Detailsa</a>
+								        			<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
 								        		</div>
 								        	</div>
 								        </div>
@@ -234,6 +232,7 @@
 							</div>
 							<!-- End Users -->
 							<!-- END STATISTIC ITEM -->
+
 							<div class="eight wide computer sixteen wide phone column justifed">
 								<h4>EXAMPLE TITLE</h4>
 								<div class="ui divider"></div>
@@ -245,14 +244,25 @@
 								</div>
 							</div>
 							<div class="eight wide computer sixteen wide phone column justifed">
-								<h4>ANOTHER TITLE</h4>
+								<h4>EXAMPLE TITLE</h4>
 								<div class="ui divider"></div>
 								<div class="ui tall stacked segment">
 									<a class="ui blue ribbon label">Chart.js Pie Chart - Examples</a>
 									<canvas id="example-pie"></canvas>
 									<div class="ui divider"></div>
 									<button id="rand-pie" class="ui blue button simplelable">Randomize Data</button>
+								</div><br>
+							</div>
+							<div class="sixteen wide computer sixteen wide phone column justifed">
+								<h3>EXAMPLE TITLE</h3>
+								<div class="ui divider"></div>
+								<div class="ui piled segment">
+									<a class="ui blue right ribbon label">Chart.js Line Chart - Multi Axis</a>
+									<canvas id="example-line"></canvas>
+									<div class="ui divider"></div>
+									<button id="rand-line" class="ui blue button simplelable">Randomize Data</button>
 								</div>
+								<br><br><br>
 							</div>
 						</div>
 					</div>
@@ -265,21 +275,11 @@
 <!-- inject:js -->
 <script src="vendors/jquery/jquery.min.js"></script>
 <script src="vendors/fomantic-ui/semantic.min.js"></script>
+<script src="js/main.js"></script>
+<!-- endinject -->
+<!-- chartjs:js -->
 <script src="vendors/chart.js/Chart.min.js"></script>
 <script src="vendors/chart.js/Chart.utils.js"></script>
 <script src="vendors/chart.js/Chart.example.js"></script>
-<script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-se/js/dataTables.semanticui.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-responsive-se/js/responsive.semanticui.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-buttons/js/buttons.html5.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-buttons/js/buttons.print.min.js"></script>
-<script src="vendors/datatables.net/datatables.net-buttons-se/js/buttons.semanticui.min.js"></script>
-<script src="vendors/jszip/jszip.min.js"></script>
-<script src="vendors/pdfmake/pdfmake.min.js"></script>
-<script src="vendors/pdfmake/vfs_fonts.js"></script>
-<script src="js/main.js"></script>
 <!-- endinject -->
 </html>

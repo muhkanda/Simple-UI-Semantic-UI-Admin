@@ -4,6 +4,7 @@ var sassGlob    = require('gulp-sass-glob');
 var inject      = require('gulp-inject');
 var browserSync = require('browser-sync').create();
 var del         = require('del');
+var wait        = require('gulp-wait');
 var paths       = {
     css         : {
         src     : 'app/scss/*.scss',
@@ -39,6 +40,7 @@ var paths       = {
     chartJs     : {
         src     : 'node_modules/chart.js/dist/**/*.*',
         dest    : 'dist/vendors/chart.js/',
+        css     : 'dist/vendors/chart.js/Chart.min.css',
         js      : 'dist/vendors/chart.js/Chart.min.js',
         utils   : 'dist/vendors/chart.js/Chart.utils.js',
         example : 'dist/vendors/chart.js/Chart.example.js'
@@ -72,7 +74,8 @@ var paths       = {
 function cpFomantic(done){
     del.sync(paths.fomantic.dest);
     gulp.src(paths.fomantic.src)
-    .pipe(gulp.dest(paths.fomantic.dest));
+    .pipe(gulp.dest(paths.fomantic.dest))
+    .pipe(wait(1500));
     done()
 }
 
@@ -153,32 +156,36 @@ function cssStyles(){
 function reload(done){
     browserSync.reload()
     done()
+    console.log('Reloaded');
 }
 
 function styleInject(done){
 	var targetFiles     = gulp.src(paths.html.src);
 	var injectFiles     = gulp.src([
-        paths.jquery.js, // - Jquery
-        paths.fomantic.css, paths.fomantic.js, // - Fomantic-UI
-        paths.chartJs.js, paths.chartJs.utils, paths.chartJs.example, // - ChartJS
-        // - DataTables
-        paths.dataTables.dest + 'js/jquery.dataTables.min.js', 
-        paths.dataTables.destSe + '**/*.min.*',
-        paths.dataTables.destRes + 'js/dataTables.responsive.min.js',
-        paths.dataTables.destrSe + '**/*.min.*',
-        paths.dataTables.destBtn + 'js/dataTables.buttons.min.js',
-        paths.dataTables.destBtn + 'js/buttons.!(flash).min.js',
-        paths.dataTables.destbtSe + '**/*.min.*',
-        // - End DataTables
-        paths.jsZip.dest + 'jszip.min.js', // - JsZip
-        paths.pdfMake.dest + '**/!(pdfmake).js', // - PdfMake
-        paths.css.dest + 'main.css', paths.js.dest + 'main.js' // - Simple-UI
+            paths.jquery.js, // - Jquery
+            paths.fomantic.css, paths.fomantic.js, // - Fomantic-UI
+            paths.css.dest + 'main.css', paths.js.dest + 'main.js' // - Simple-UI
         ]);
-    var injectOptions   = {
-        addRootSlash: false,
-        ignorePath: [paths.builds.dest]
-    };
-  	return targetFiles.pipe(inject(injectFiles, injectOptions))
+    var dttblFiles      = gulp.src([
+            paths.dataTables.dest + 'js/jquery.dataTables.min.js', 
+            paths.dataTables.destSe + '**/*.min.*',
+            paths.dataTables.destRes + 'js/dataTables.responsive.min.js',
+            paths.dataTables.destrSe + '**/*.min.*',
+            paths.dataTables.destBtn + 'js/dataTables.buttons.min.js',
+            paths.dataTables.destBtn + 'js/buttons.!(flash).min.js',
+            paths.dataTables.destbtSe + '**/*.min.*',
+            paths.jsZip.dest + 'jszip.min.js', // - JsZip
+            paths.pdfMake.dest + '**/!(pdfmake).js' // - PdfMake
+        ]); 
+    var chartFiles      = gulp.src([
+            paths.chartJs.css, 
+            paths.chartJs.js, 
+            paths.chartJs.utils, 
+            paths.chartJs.example
+        ]);
+  	return targetFiles.pipe(inject(injectFiles, {addRootSlash: false, ignorePath: [paths.builds.dest]}))
+    .pipe(inject(dttblFiles, {name: 'datatables', addRootSlash: false, ignorePath: [paths.builds.dest]}))
+    .pipe(inject(chartFiles, {name: 'chartjs', addRootSlash: false, ignorePath: [paths.builds.dest]}))
     .pipe(gulp.dest(paths.builds.dest))
     done()
 }
@@ -223,6 +230,7 @@ function suDev(done){
         ])();
     gulp.series(styleInject);
     done()
+    wait(2500);
 }
 
 exports.simpleui = gulp.series(suDev, suWatch, reload);

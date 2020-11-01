@@ -1,26 +1,26 @@
 {
-  "_from": "datatables.net-buttons-se@^1.6.2",
-  "_id": "datatables.net-buttons-se@1.6.2",
+  "_from": "datatables.net-buttons-se@^1.6.5",
+  "_id": "datatables.net-buttons-se@1.6.5",
   "_inBundle": false,
-  "_integrity": "sha512-ebSO+Mg/ZOhGT+CWh4FIdp88K/k7Q1fK3W4IoRW99O/z0feUEJXd+fuU2m2s2Y+wApkf8UKvXfAse8xQ4MKcfA==",
+  "_integrity": "sha512-K12E72Lp9xcRdRUufB76+AUwA123HfzImNANYtRAC1WkVmdJSiA15wu33ky/wV1g4FBDQWVrk1UDYRU9gNoRbQ==",
   "_location": "/datatables.net-buttons-se",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "datatables.net-buttons-se@^1.6.2",
+    "raw": "datatables.net-buttons-se@^1.6.5",
     "name": "datatables.net-buttons-se",
     "escapedName": "datatables.net-buttons-se",
-    "rawSpec": "^1.6.2",
+    "rawSpec": "^1.6.5",
     "saveSpec": null,
-    "fetchSpec": "^1.6.2"
+    "fetchSpec": "^1.6.5"
   },
   "_requiredBy": [
     "#DEV:/"
   ],
-  "_resolved": "https://registry.npmjs.org/datatables.net-buttons-se/-/datatables.net-buttons-se-1.6.2.tgz",
-  "_shasum": "60ad8bccc31e0c44f70e64aa641d5bfc7cceebc1",
-  "_spec": "datatables.net-buttons-se@^1.6.2",
+  "_resolved": "https://registry.npmjs.org/datatables.net-buttons-se/-/datatables.net-buttons-se-1.6.5.tgz",
+  "_shasum": "25041a43104c77b566bda8a20fed4d00c40c1545",
+  "_spec": "datatables.net-buttons-se@^1.6.5",
   "_where": "D:\\Simple-UI-Semantic-UI-Admin",
   "author": {
     "name": "SpryMedia Ltd",
@@ -31,7 +31,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "datatables.net-buttons": "1.6.2",
+    "datatables.net-buttons": "1.6.5",
     "datatables.net-se": "^1.10.15",
     "jquery": ">=1.7"
   },
@@ -58,5 +58,5 @@
   "main": "js/buttons.semanticui.js",
   "name": "datatables.net-buttons-se",
   "style": "css/buttons.semanticui.css",
-  "version": "1.6.2"
+  "version": "1.6.5"
 }

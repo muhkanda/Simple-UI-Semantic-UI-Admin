@@ -1,8 +1,8 @@
 {
   "_from": "datatables.net@^1.10.15",
-  "_id": "datatables.net@1.10.21",
+  "_id": "datatables.net@1.10.22",
   "_inBundle": false,
-  "_integrity": "sha512-/bSZtxmf3GTpYcvEmwZ8q26I1yhSx8qklR2B+s1K8+/51UW/zc2zTYwJMqr/Z+iCYixAc00ildj4g2x0Qamolw==",
+  "_integrity": "sha512-ujn8GvkQIBYzYH54XY7OrI0Zb35TKRd9ABYfbnXgBfwTGIFT6UsmXrfHU5Yk+MSDoF0sDu2TB+31V6c+zUZ0Pw==",
   "_location": "/datatables.net",
   "_phantomChildren": {},
   "_requested": {
@@ -20,8 +20,8 @@
     "/datatables.net-responsive",
     "/datatables.net-se"
   ],
-  "_resolved": "https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.21.tgz",
-  "_shasum": "f1d35c8e5c3eb7f5caef39e80cd5b836a8c77103",
+  "_resolved": "https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.22.tgz",
+  "_shasum": "975d4ffb1eb40dec5fb772eaf93796ec1a948b55",
   "_spec": "datatables.net@^1.10.15",
   "_where": "D:\\Simple-UI-Semantic-UI-Admin\\node_modules\\datatables.net-buttons",
   "author": {
@@ -56,5 +56,5 @@
     "type": "git",
     "url": "git+https://github.com/DataTables/Dist-DataTables.git"
   },
-  "version": "1.10.21"
+  "version": "1.10.22"
 }

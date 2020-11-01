@@ -1,28 +1,28 @@
 {
-  "_from": "datatables.net-se@^1.10.21",
-  "_id": "datatables.net-se@1.10.21",
+  "_from": "datatables.net-se@^1.10.22",
+  "_id": "datatables.net-se@1.10.22",
   "_inBundle": false,
-  "_integrity": "sha512-EZfBxEfsaoyV/cc8hjOIQWdaRi6h0BtA8VebJgWnYr1L/cUEG7k4BL8gRj2qFfCI2L97wEPcjgH5YeRRu8YUyw==",
+  "_integrity": "sha512-0JUd5NH8Arsf5T1PNSwkpO3qkUx77pk7LY5dHhPHhJ5Dvr1UWI2dLDwhLua84Z8tvQIQO8U50DldP7CD+3nytQ==",
   "_location": "/datatables.net-se",
   "_phantomChildren": {},
   "_requested": {
     "type": "range",
     "registry": true,
-    "raw": "datatables.net-se@^1.10.21",
+    "raw": "datatables.net-se@^1.10.22",
     "name": "datatables.net-se",
     "escapedName": "datatables.net-se",
-    "rawSpec": "^1.10.21",
+    "rawSpec": "^1.10.22",
     "saveSpec": null,
-    "fetchSpec": "^1.10.21"
+    "fetchSpec": "^1.10.22"
   },
   "_requiredBy": [
     "#DEV:/",
     "/datatables.net-buttons-se",
     "/datatables.net-responsive-se"
   ],
-  "_resolved": "https://registry.npmjs.org/datatables.net-se/-/datatables.net-se-1.10.21.tgz",
-  "_shasum": "91d3b7f044f14c39758df84d12663ef45d6c0564",
-  "_spec": "datatables.net-se@^1.10.21",
+  "_resolved": "https://registry.npmjs.org/datatables.net-se/-/datatables.net-se-1.10.22.tgz",
+  "_shasum": "88180a29b8cfc6660897e144b1bd5efa14192489",
+  "_spec": "datatables.net-se@^1.10.22",
   "_where": "D:\\Simple-UI-Semantic-UI-Admin",
   "author": {
     "name": "SpryMedia Ltd",
@@ -33,7 +33,7 @@
   },
   "bundleDependencies": false,
   "dependencies": {
-    "datatables.net": "1.10.21",
+    "datatables.net": "1.10.22",
     "jquery": ">=1.7"
   },
   "deprecated": false,
@@ -59,5 +59,5 @@
     "url": "git+https://github.com/DataTables/Dist-DataTables-SemanticUI.git"
   },
   "style": "css/dataTables.semanticui.css",
-  "version": "1.10.21"
+  "version": "1.10.22"
 }

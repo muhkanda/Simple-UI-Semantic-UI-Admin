@@ -9,6 +9,8 @@
 	<link rel="icon" href="images/logo.png" sizes="32x32">
 	<!-- inject:css -->
   	<!-- endinject -->
+  	<!-- datatables:css -->
+	<!-- endinject -->
 </head>
 <body>
 	<div class="ui grid">
@@ -237,14 +239,28 @@
 </body>
 <!-- inject:js -->
 <!-- endinject -->
+<!-- datatables:js -->
+<!-- endinject -->
 <script>
-$('.message .close')
-  .on('click', function() {
-    $(this)
-      .closest('.message')
-      .transition('fade')
-    ;
-  })
-;
+	$(document).ready(function(){
+		// - MESSAGES
+		$('.message .close').on('click', function() {
+		    $(this)
+		      .closest('.message')
+		      .transition('fade')
+		    ;
+		});
+		// - DATATABLES
+	    $(document).ready(function(){
+		    $('#example').DataTable();
+		});
+		var table = $('#example').DataTable({
+	        lengthChange: false,
+	        buttons: [ 'colvis', 'copy', 'excel', 'pdf' ]
+	    });
+	    table.buttons().container().appendTo(
+	    	$('div.eight.column:eq(0)', table.table().container())
+	    );
+	});
 </script>
 </html>

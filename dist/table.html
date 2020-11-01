@@ -9,11 +9,13 @@
 	<link rel="icon" href="images/logo.png" sizes="32x32">
 	<!-- inject:css -->
   	<link rel="stylesheet" href="vendors/fomantic-ui/semantic.min.css">
-  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-se/css/dataTables.semanticui.min.css">
-  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-responsive-se/css/responsive.semanticui.min.css">
-  	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-buttons-se/css/buttons.semanticui.min.css">
   	<link rel="stylesheet" href="css/main.css">
   	<!-- endinject -->
+  	<!-- datatables:css -->
+	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-se/css/dataTables.semanticui.min.css">
+	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-responsive-se/css/responsive.semanticui.min.css">
+	<link rel="stylesheet" href="vendors/datatables.net/datatables.net-buttons-se/css/buttons.semanticui.min.css">
+	<!-- endinject -->
 </head>
 <body>
 	<div class="ui grid">
@@ -243,6 +245,9 @@
 <!-- inject:js -->
 <script src="vendors/jquery/jquery.min.js"></script>
 <script src="vendors/fomantic-ui/semantic.min.js"></script>
+<script src="js/main.js"></script>
+<!-- endinject -->
+<!-- datatables:js -->
 <script src="vendors/datatables.net/js/jquery.dataTables.min.js"></script>
 <script src="vendors/datatables.net/datatables.net-se/js/dataTables.semanticui.min.js"></script>
 <script src="vendors/datatables.net/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
@@ -255,16 +260,27 @@
 <script src="vendors/jszip/jszip.min.js"></script>
 <script src="vendors/pdfmake/pdfmake.min.js"></script>
 <script src="vendors/pdfmake/vfs_fonts.js"></script>
-<script src="js/main.js"></script>
 <!-- endinject -->
 <script>
-$('.message .close')
-  .on('click', function() {
-    $(this)
-      .closest('.message')
-      .transition('fade')
-    ;
-  })
-;
+	$(document).ready(function(){
+		// - MESSAGES
+		$('.message .close').on('click', function() {
+		    $(this)
+		      .closest('.message')
+		      .transition('fade')
+		    ;
+		});
+		// - DATATABLES
+	    $(document).ready(function(){
+		    $('#example').DataTable();
+		});
+		var table = $('#example').DataTable({
+	        lengthChange: false,
+	        buttons: [ 'colvis', 'copy', 'excel', 'pdf' ]
+	    });
+	    table.buttons().container().appendTo(
+	    	$('div.eight.column:eq(0)', table.table().container())
+	    );
+	});
 </script>
 </html>
