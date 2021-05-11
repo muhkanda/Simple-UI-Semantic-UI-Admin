@@ -21,7 +21,7 @@ Don't forget to watch, star or fork this template because i will update this tem
 <p>Simple-UI is a Free responsive Admin Template based on Fomantic-UI. Simple-UI has highly responsive to make your admin page look simply but great on both desktop and mobile devices.</p>
 
 ### Template Preview
-You can visit and see [Demo site](https://helloputra.github.io/simple-ui/) .
+[Demo Site](https://helloputra.github.io/simple-ui/)
 
 ### Template Creator
 [Muh Kanda Wibawa Putra](https://github.com/HelloPutra/)
