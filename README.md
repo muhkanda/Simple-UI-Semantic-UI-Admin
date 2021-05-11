@@ -22,7 +22,7 @@ Don't forget to watch, star or fork this template because i will update this tem
 
 ### Template Preview
 <br>
-<p>You can visit and see [<u>Demo site</u>](https://helloputra.github.io/simple-ui/dist/index.html).</p>
+<p>You can visit and see <u>[Demo site](https://helloputra.github.io/simple-ui/dist/index.html)</u>.</p>
 
 ### Template Creator
 [Muh Kanda Wibawa Putra](https://github.com/HelloPutra/)
