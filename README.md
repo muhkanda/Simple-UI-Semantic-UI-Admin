@@ -13,7 +13,7 @@ Don't forget to watch, star or fork this template because i will update this tem
 <h1 align="center">Simple-UI Admin Templates</h1>
 <span align="center">
 
-![GitHub Last Commit](https://img.shields.io/badge/Last%20Commit-NOV%202020-green.svg?logo=github&style=flat-square)
+![GitHub Last Commit](https://img.shields.io/badge/Last%20Commit-MAY%202021-green.svg?logo=github&style=flat-square)
 ![Repo Size](https://img.shields.io/badge/Repo%20Size-27%20MB-blue.svg?style=flat-square)
 [![LICENSE](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
@@ -33,18 +33,18 @@ Don't forget to watch, star or fork this template because i will update this tem
 ### Built With
 
 - [![Fomantic-UI](https://img.shields.io/badge/Fomantic--UI-%5E2.8.7-%2300b4f0.svg?style=flat-square)](https://fomantic-ui.com/)
-- [![Jquery](https://img.shields.io/badge/Jquery-%5E3.5.1-blue.svg?style=flat-square)](https://jquery.com/)
-- [![DataTables](https://img.shields.io/badge/DataTables-1.10.22-blue.svg?style=flat-square)](https://datatables.net/)
-- [![ChartJs](https://img.shields.io/badge/ChartJs-%5E2.9.4-deeppink.svg?style=flat-square)](https://www.chartjs.org/)
+- [![Jquery](https://img.shields.io/badge/Jquery-%5E3.6.0-blue.svg?style=flat-square)](https://jquery.com/)
+- [![DataTables](https://img.shields.io/badge/DataTables-1.10.24-blue.svg?style=flat-square)](https://datatables.net/)
+- [![ChartJs](https://img.shields.io/badge/ChartJs-%5E3.2.1-deeppink.svg?style=flat-square)](https://www.chartjs.org/)
 - [![GulpJs](https://img.shields.io/badge/GulpJs-%5E4.0.2-red.svg?style=flat-square)](https://gulpjs.com/)
-- [![jszip](https://img.shields.io/badge/jszip-%5E3.5.0-green.svg?style=flat-square)](https://stuk.github.io/jszip/)
-- [![pdfmake](https://img.shields.io/badge/pdfmake-%5E0.1.68-green.svg?style=flat-square)](https://github.com/bpampuch/pdfmake)
+- [![jszip](https://img.shields.io/badge/jszip-%5E3.6.0-green.svg?style=flat-square)](https://stuk.github.io/jszip/)
+- [![pdfmake](https://img.shields.io/badge/pdfmake-%5E0.1.71-green.svg?style=flat-square)](https://github.com/bpampuch/pdfmake)
 - [![del](https://img.shields.io/badge/del-%5E6.0.0-green.svg?style=flat-square)](https://github.com/sindresorhus/del)
 - [![gulp-inject](https://img.shields.io/badge/gulp--inject-%5E5.0.5-green.svg?style=flat-square)](https://github.com/klei/gulp-inject)
 - [![gulp-sass](https://img.shields.io/badge/gulp--sass-%5E4.1.0-green.svg?style=flat-square)](https://github.com/dlmanning/gulp-sass)
 - [![gulp-sass-glob](https://img.shields.io/badge/gulp--sass--glob-%5E1.1.0-green.svg?style=flat-square)](https://github.com/mikevercoelen/gulp-sass-glob)
 - [![gulp-useref](https://img.shields.io/badge/gulp--useref-%5E5.0.0-green.svg?style=flat-square)](https://github.com/jonkemp/gulp-useref)
-- [![browser-sync](https://img.shields.io/badge/gulp--useref-%5E2.26.13-green.svg?style=flat-square)](https://www.browsersync.io/)
+- [![browser-sync](https://img.shields.io/badge/gulp--useref-%5E2.26.14-green.svg?style=flat-square)](https://www.browsersync.io/)
 
 ### License
 Simple-UI is licensed under The MIT License (MIT). Which means that you can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the final products. But you always need to state that [Muh Kanda Wibawa Putra](https://github.com/HelloPutra/) is the original author of this template.

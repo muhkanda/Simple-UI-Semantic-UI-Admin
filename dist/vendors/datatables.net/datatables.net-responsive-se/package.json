@@ -1,57 +1,30 @@
 {
-  "_from": "datatables.net-responsive-se@^2.2.6",
-  "_id": "datatables.net-responsive-se@2.2.6",
-  "_inBundle": false,
-  "_integrity": "sha512-brVLLodxc2/TUsSOZEp7Dfz08Bc5gQr+IFYQO7sGSL3T74C5uYb+0A0WtcUg7IhmlLMNiYgIVOLMLfdQmJbmDw==",
-  "_location": "/datatables.net-responsive-se",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "datatables.net-responsive-se@^2.2.6",
     "name": "datatables.net-responsive-se",
-    "escapedName": "datatables.net-responsive-se",
-    "rawSpec": "^2.2.6",
-    "saveSpec": null,
-    "fetchSpec": "^2.2.6"
-  },
-  "_requiredBy": [
-    "#DEV:/"
-  ],
-  "_resolved": "https://registry.npmjs.org/datatables.net-responsive-se/-/datatables.net-responsive-se-2.2.6.tgz",
-  "_shasum": "ceb07eadb7a51d8c9bc9a15f4abbeef545313921",
-  "_spec": "datatables.net-responsive-se@^2.2.6",
-  "_where": "D:\\Simple-UI-Semantic-UI-Admin",
-  "author": {
-    "name": "SpryMedia Ltd",
-    "url": "http://datatables.net"
-  },
-  "bugs": {
-    "url": "https://datatables.net/forums"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "datatables.net-responsive": "2.2.6",
-    "datatables.net-se": "^1.10.15",
-    "jquery": ">=1.7"
-  },
-  "deprecated": false,
-  "description": "Responsive for DataTables with styling for [Semantic UI](http://semantic-ui.com/)",
-  "files": [
-    "css/**/*.css",
-    "js/**/*.js"
-  ],
-  "homepage": "https://datatables.net",
-  "keywords": [
-    "responsive",
-    "DataTables",
-    "jQuery",
-    "table",
-    "Semantic UI"
-  ],
-  "license": "MIT",
-  "main": "js/responsive.semanticui.js",
-  "name": "datatables.net-responsive-se",
-  "style": "css/responsive.semanticui.css",
-  "version": "2.2.6"
+    "version": "2.2.7",
+    "description": "Responsive for DataTables with styling for [Semantic UI](http://semantic-ui.com/)",
+    "files": [
+        "css/**/*.css",
+        "js/**/*.js"
+    ],
+    "main": "js/responsive.semanticui.js",
+    "keywords": [
+        "responsive",
+        "DataTables",
+        "jQuery",
+        "table",
+        "Semantic UI"
+    ],
+    "homepage": "https://datatables.net",
+    "bugs": "https://datatables.net/forums",
+    "license": "MIT",
+    "author": {
+        "name": "SpryMedia Ltd",
+        "url": "http://datatables.net"
+    },
+    "dependencies": {
+        "jquery": ">=1.7",
+        "datatables.net-se": "^1.10.15",
+        "datatables.net-responsive": "2.2.7"
+    },
+    "style": "css/responsive.semanticui.css"
 }

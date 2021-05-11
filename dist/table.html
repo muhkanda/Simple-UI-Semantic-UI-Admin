@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
 	<meta name="robots" content="all,follow">
-	<title>SIMPLE-UI Admin Templates</title>
+	<title>SIMPLE UI &mdash; Admin Templates</title>
 	<link rel="icon" href="images/logo.png" sizes="32x32">
 	<!-- inject:css -->
   	<link rel="stylesheet" href="vendors/fomantic-ui/semantic.min.css">
@@ -31,16 +31,16 @@
 							</div>
 							<div class="left menu">
 								<div class="nav item">
-									<strong class="navtext">SIMPLE-UI</strong>
+									<strong class="navtext">SIMPLE UI</strong>
 								</div>
 							</div>
 							<div class="ui top pointing dropdown admindropdown link item right">
 								<img class="imgrad" src="images/user.png" alt="">
-								<span class="clear navtext"><strong>ACCOUNT</strong></span>
+								<span class="clear navtext"><strong>Hi, Kabayan</strong></span>
 								<i class="dropdown icon navtext"></i>
 								<div class="menu">
 									<div class="item"><p><i class="settings icon"></i>Account Setting</p></div>
-									<div class="item"><p><i class="sign out alternate icon"></i>Logout</p></div>
+									<a href="login.html" class="item"><i class="sign out alternate icon"></i> Logout</a>
 								</div>
 							</div>
 						</div>
@@ -50,11 +50,11 @@
 				<!-- mobile and tablet only navbar -->
 				<div class="tablet mobile only row">
 					<div class="column">
-				    <div class="ui top fixed menu navcolor">
+					<div class="ui top fixed menu navcolor">
 						<a id="showmobiletabletsidebar" class="item navtext"><i class="content icon"></i></a>
 						<div class="right menu">
 							<div class="item">
-								<strong class="navtext">SIMPLE-UI</strong>
+								<strong class="navtext">SIMPLE UI</strong>
 							</div>
 							<div class="item">
 								<img src="images/logo.png">
@@ -78,15 +78,24 @@
 											<img class="ui mini image" src="images/logo.png">
 										</td>
 										<td>
-											<span class="clear"><strong>SIMPLE-UI</strong></span>
+											<span class="clear"><strong>SIMPLE UI</strong></span>
 										</td>
 									</tr>
 								</table>
 							</div>
 							<a class="item" href="index.html"><i class="home icon"></i> Dashboard</a>
 							<a class="item" href="table.html"><i class="table icon"></i> Table</a>
+							<!-- Begin Simple Accordion -->
+							<div class="ui accordion simpleaccordion item">
+								<div class="title titleaccordion item"><i class="dropdown icon"></i> Settings</div>
+								<div class="content contentaccordion">
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Account Setting</a>
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Site Setting</a>
+								</div>
+							</div>
+							<!-- End Simple Accordion -->
 							<a class="item"><i class="settings icon"></i> Settings</a>	
-							<a class="item"><i class="sign out alternate icon"></i> Logout</a>
+							<a href="login.html" class="item"><i class="sign out alternate icon"></i> Logout</a>
 							<a class="item" href="https://semantic-ui.com/"><i class="heart icon"></i>More Components</a>
 							<div class="item" id="hidemobiletabletsidebar">
 								<button class="fluid ui button">
@@ -107,28 +116,16 @@
 							</div>
 							<a class="item" href="index.html"><i class="home icon"></i> Dashboard</a>
 							<a class="item" href="table.html"><i class="table icon"></i> Table</a>
-							<div class="ui right pointing dropdown sidebardropdown link item">
-								<i class="angle right icon"></i>
-								Apps
-								<div class="menu">
-									<a class="item"><p><i class="instagram icon"></i> Instagram</p></a>
-									<a class="item"><p><i class="telegram icon"></i> Telegram</p></a>
-									<a class="item"><p><i class="whatsapp icon"></i> Whatsapp</p></a>
-									<a class="item"><p><i class="steam icon"></i> Steam</p></a>
-								</div>
-							</div>			
-							<div class="ui item">
-								<div class="ui fluid selection dropdown moredropdown">
-									<div class="text">Menu</div>
-									<i class="dropdown icon"></i>
-									<div class="menu">
-										<p class="item">Choice 1</p>
-										<p class="item">Choice 2</p>
-									</div>
+							<!-- Begin Simple Accordion -->
+							<div class="ui accordion simpleaccordion item">
+								<div class="title titleaccordion item"><i class="dropdown icon"></i> Settings</div>
+								<div class="content contentaccordion">
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Account Setting</a>
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Site Setting</a>
 								</div>
 							</div>
-							<a class="item"><i class="settings icon"></i> Settings</a>	
-							<a class="item"><i class="sign out alternate icon"></i> Logout</a>
+							<!-- End Simple Accordion -->
+							<a href="login.html" class="item"><i class="sign out alternate icon"></i> Logout</a>
 							<a class="item" href="https://semantic-ui.com/"><i class="heart icon"></i>More Components</a>
 							<a class="item"></a>
 						</div>

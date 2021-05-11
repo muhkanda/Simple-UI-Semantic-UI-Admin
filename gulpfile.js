@@ -71,6 +71,21 @@ var paths       = {
     }
 };
 
+function cpRun(done){
+    del.sync(paths.html.dest);
+    gulp.src(paths.html.src)
+    .pipe(gulp.dest(paths.html.dest));
+
+    gulp.src(paths.css.src)
+    .pipe(gulp.dest(paths.css.dest));
+
+    gulp.src(paths.js.src)
+    .pipe(gulp.dest(paths.js.dest))
+    .pipe(wait(1500));
+    done()
+}
+
+
 function cpFomantic(done){
     del.sync(paths.fomantic.dest);
     gulp.src(paths.fomantic.src)
@@ -228,9 +243,14 @@ function suDev(done){
         cpChartJs,
         cpImg
         ])();
-    gulp.series(styleInject);
     done()
     wait(2500);
 }
 
-exports.simpleui = gulp.series(suDev, suWatch, reload);
+function runInject(done){
+    gulp.series(styleInject);
+    gulp.series(cpRun);
+    done()
+}
+
+exports.simpleui = gulp.series(suDev, runInject, suWatch, reload);

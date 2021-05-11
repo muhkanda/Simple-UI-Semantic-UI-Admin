@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * Styling for DataTables with Semantic UI
  */
@@ -26,17 +27,17 @@ table.dataTable.table thead td.sorting_desc:after {
 }
 table.dataTable.table thead th.sorting:after,
 table.dataTable.table thead td.sorting:after {
-  content: "\f0dc";
+  content: "";
   color: #ddd;
   font-size: 0.8em;
 }
 table.dataTable.table thead th.sorting_asc:after,
 table.dataTable.table thead td.sorting_asc:after {
-  content: "\f0de";
+  content: "";
 }
 table.dataTable.table thead th.sorting_desc:after,
 table.dataTable.table thead td.sorting_desc:after {
-  content: "\f0dd";
+  content: "";
 }
 table.dataTable.table td,
 table.dataTable.table th {

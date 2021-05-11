@@ -1,58 +1,31 @@
 {
-  "_from": "datatables.net-responsive@2.2.6",
-  "_id": "datatables.net-responsive@2.2.6",
-  "_inBundle": false,
-  "_integrity": "sha512-cSz8xlM6bUgQlroT6wJjj+wyKGo+GY2Bq+2CL17HaLGrtv1k/RDitHoDMdYbaKljBwSa4sGVBxikHGz3yvirJA==",
-  "_location": "/datatables.net-responsive",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "datatables.net-responsive@2.2.6",
     "name": "datatables.net-responsive",
-    "escapedName": "datatables.net-responsive",
-    "rawSpec": "2.2.6",
-    "saveSpec": null,
-    "fetchSpec": "2.2.6"
-  },
-  "_requiredBy": [
-    "/datatables.net-responsive-se"
-  ],
-  "_resolved": "https://registry.npmjs.org/datatables.net-responsive/-/datatables.net-responsive-2.2.6.tgz",
-  "_shasum": "74a4ac0da7681eb4273b8d359f198ef2def2971e",
-  "_spec": "datatables.net-responsive@2.2.6",
-  "_where": "D:\\Simple-UI-Semantic-UI-Admin\\node_modules\\datatables.net-responsive-se",
-  "author": {
-    "name": "SpryMedia Ltd",
-    "url": "http://datatables.net"
-  },
-  "bugs": {
-    "url": "https://datatables.net/forums"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "datatables.net": "^1.10.15",
-    "jquery": ">=1.7"
-  },
-  "deprecated": false,
-  "description": "Responsive for DataTables ",
-  "files": [
-    "js/**/*.js"
-  ],
-  "homepage": "https://datatables.net",
-  "keywords": [
-    "responsive",
-    "DataTables",
-    "jQuery",
-    "table",
-    "DataTables"
-  ],
-  "license": "MIT",
-  "main": "js/dataTables.responsive.js",
-  "name": "datatables.net-responsive",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DataTables/Dist-DataTables-Responsive.git"
-  },
-  "version": "2.2.6"
+    "version": "2.2.7",
+    "description": "Responsive for DataTables ",
+    "files": [
+        "js/**/*.js"
+    ],
+    "main": "js/dataTables.responsive.js",
+    "keywords": [
+        "responsive",
+        "DataTables",
+        "jQuery",
+        "table",
+        "DataTables"
+    ],
+    "homepage": "https://datatables.net",
+    "bugs": "https://datatables.net/forums",
+    "license": "MIT",
+    "author": {
+        "name": "SpryMedia Ltd",
+        "url": "http://datatables.net"
+    },
+    "dependencies": {
+        "jquery": ">=1.7",
+        "datatables.net": "^1.10.15"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DataTables/Dist-DataTables-Responsive.git"
+    }
 }

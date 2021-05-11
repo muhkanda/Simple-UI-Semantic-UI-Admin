@@ -1,60 +1,35 @@
 {
-  "_from": "datatables.net@^1.10.15",
-  "_id": "datatables.net@1.10.22",
-  "_inBundle": false,
-  "_integrity": "sha512-ujn8GvkQIBYzYH54XY7OrI0Zb35TKRd9ABYfbnXgBfwTGIFT6UsmXrfHU5Yk+MSDoF0sDu2TB+31V6c+zUZ0Pw==",
-  "_location": "/datatables.net",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "range",
-    "registry": true,
-    "raw": "datatables.net@^1.10.15",
     "name": "datatables.net",
-    "escapedName": "datatables.net",
-    "rawSpec": "^1.10.15",
-    "saveSpec": null,
-    "fetchSpec": "^1.10.15"
-  },
-  "_requiredBy": [
-    "/datatables.net-buttons",
-    "/datatables.net-responsive",
-    "/datatables.net-se"
-  ],
-  "_resolved": "https://registry.npmjs.org/datatables.net/-/datatables.net-1.10.22.tgz",
-  "_shasum": "975d4ffb1eb40dec5fb772eaf93796ec1a948b55",
-  "_spec": "datatables.net@^1.10.15",
-  "_where": "D:\\Simple-UI-Semantic-UI-Admin\\node_modules\\datatables.net-buttons",
-  "author": {
-    "name": "SpryMedia Ltd",
-    "url": "http://datatables.net"
-  },
-  "bugs": {
-    "url": "https://datatables.net/forums"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "jquery": ">=1.7"
-  },
-  "deprecated": false,
-  "description": "DataTables for jQuery ",
-  "files": [
-    "js/**/*.js"
-  ],
-  "homepage": "https://datatables.net",
-  "keywords": [
-    "filter",
-    "sort",
-    "DataTables",
-    "jQuery",
-    "table",
-    "DataTables"
-  ],
-  "license": "MIT",
-  "main": "js/jquery.dataTables.js",
-  "name": "datatables.net",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DataTables/Dist-DataTables.git"
-  },
-  "version": "1.10.22"
+    "version": "1.10.24",
+    "description": "DataTables for jQuery ",
+    "files": [
+        "js/**/*.js"
+    ],
+    "main": "js/jquery.dataTables.js",
+    "type": "types.d.ts",
+    "keywords": [
+        "filter",
+        "sort",
+        "DataTables",
+        "jQuery",
+        "table",
+        "DataTables"
+    ],
+    "homepage": "https://datatables.net",
+    "bugs": "https://datatables.net/forums",
+    "license": "MIT",
+    "author": {
+        "name": "SpryMedia Ltd",
+        "url": "http://datatables.net"
+    },
+    "dependencies": {
+        "jquery": ">=1.7"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/DataTables/Dist-DataTables.git"
+    },
+    "devDependencies": {
+        "@types/jquery": "^3.5.1"
+    }
 }

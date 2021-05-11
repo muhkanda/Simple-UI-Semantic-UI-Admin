@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
 	<meta name="robots" content="all,follow">
-	<title>SIMPLE-UI Admin Templates</title>
+	<title>SIMPLE UI &mdash; Admin Templates</title>
 	<link rel="icon" href="images/logo.png" sizes="32x32">
 	<!-- inject:css -->
   	<link rel="stylesheet" href="vendors/fomantic-ui/semantic.min.css">
@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="ui grid">
-		<div class="row">
+				<div class="row">
 			<div class="ui grid">
 				<!-- BEGIN NAVBAR -->
 				<!-- computer only navbar -->
@@ -29,7 +29,7 @@
 							</div>
 							<div class="left menu">
 								<div class="nav item">
-									<strong class="navtext">SIMPLE-UI</strong>
+									<strong class="navtext">SIMPLE UI</strong>
 								</div>
 							</div>
 							<div class="ui top pointing dropdown admindropdown link item right">
@@ -38,7 +38,7 @@
 								<i class="dropdown icon navtext"></i>
 								<div class="menu">
 									<div class="item"><p><i class="settings icon"></i>Account Setting</p></div>
-									<div class="item"><p><i class="sign out alternate icon"></i>Logout</p></div>
+									<a href="login.html" class="item"><i class="sign out alternate icon"></i> Logout</a>
 								</div>
 							</div>
 						</div>
@@ -48,11 +48,11 @@
 				<!-- mobile and tablet only navbar -->
 				<div class="tablet mobile only row">
 					<div class="column">
-				    <div class="ui top fixed menu navcolor">
+					<div class="ui top fixed menu navcolor">
 						<a id="showmobiletabletsidebar" class="item navtext"><i class="content icon"></i></a>
 						<div class="right menu">
 							<div class="item">
-								<strong class="navtext">SIMPLE-UI</strong>
+								<strong class="navtext">SIMPLE UI</strong>
 							</div>
 							<div class="item">
 								<img src="images/logo.png">
@@ -76,15 +76,24 @@
 											<img class="ui mini image" src="images/logo.png">
 										</td>
 										<td>
-											<span class="clear"><strong>SIMPLE-UI</strong></span>
+											<span class="clear"><strong>SIMPLE UI</strong></span>
 										</td>
 									</tr>
 								</table>
 							</div>
 							<a class="item" href="index.html"><i class="home icon"></i> Dashboard</a>
 							<a class="item" href="table.html"><i class="table icon"></i> Table</a>
+							<!-- Begin Simple Accordion -->
+							<div class="ui accordion simpleaccordion item">
+								<div class="title titleaccordion item"><i class="dropdown icon"></i> Settings</div>
+								<div class="content contentaccordion">
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Account Setting</a>
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Site Setting</a>
+								</div>
+							</div>
+							<!-- End Simple Accordion -->
 							<a class="item"><i class="settings icon"></i> Settings</a>	
-							<a class="item"><i class="sign out alternate icon"></i> Logout</a>
+							<a href="login.html" class="item"><i class="sign out alternate icon"></i> Logout</a>
 							<a class="item" href="https://semantic-ui.com/"><i class="heart icon"></i>More Components</a>
 							<div class="item" id="hidemobiletabletsidebar">
 								<button class="fluid ui button">
@@ -107,24 +116,14 @@
 							<a class="item" href="table.html"><i class="table icon"></i> Table</a>
 							<!-- Begin Simple Accordion -->
 							<div class="ui accordion simpleaccordion item">
-							    <div class="title titleaccordion item"><i class="dropdown icon"></i> Social Media</div>
-							    <div class="content contentaccordion">
-							        <a class="item itemaccordion" href="kelola_gaji.php"><i class="money bill alternate outline icon"></i> Pengelolaan Gaji Pegawai</a>
-							    </div>
-							</div>
-							<!-- End Simple Accordion -->
-							<div class="ui item">
-								<div class="ui fluid selection dropdown moredropdown">
-									<div class="text">Menu</div>
-									<i class="dropdown icon"></i>
-									<div class="menu">
-										<p class="item">Choice 1</p>
-										<p class="item">Choice 2</p>
-									</div>
+								<div class="title titleaccordion item"><i class="dropdown icon"></i> Settings</div>
+								<div class="content contentaccordion">
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Account Setting</a>
+									<a class="item itemaccordion" href="#"><i class="settings icon"></i> Site Setting</a>
 								</div>
 							</div>
-							<a class="item"><i class="settings icon"></i> Settings</a>	
-							<a class="item"><i class="sign out alternate icon"></i> Logout</a>
+							<!-- End Simple Accordion -->
+							<a href="login.html" class="item"><i class="sign out alternate icon"></i> Logout</a>
 							<a class="item" href="https://semantic-ui.com/"><i class="heart icon"></i>More Components</a>
 							<a class="item"></a>
 						</div>
@@ -146,88 +145,88 @@
 							<!-- Begin Page Views -->
 							<div class="four wide computer sixteen wide phone centered column">
 								<div class="ui raised segment">
-								    <div class="content">
-								        <div class="ui centered grid">
-								        	<div class="row">
-								        		<div class="six wide computer column">
-								        			<div class="ui small image simpleimage itemcolor1">
-			                                            	<i class="chart bar outline icon simpleicon"></i>
-			                                        </div>
-								        		</div>
-								        		<div class="ten wide computer column">
-								        			<span><h4>Page Views</h4></span>
-								        			7120 Views
-								        			<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
-								        		</div>
-								        	</div>
-								        </div>
-								    </div>
+									<div class="content">
+										<div class="ui centered grid">
+											<div class="row">
+												<div class="six wide computer column">
+													<div class="ui small image simpleimage itemcolor1">
+															<i class="chart bar outline icon simpleicon"></i>
+													</div>
+												</div>
+												<div class="ten wide computer column">
+													<span><h4>Page Views</h4></span>
+													7120 Views
+													<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!-- End Page Views -->
 							<!-- Begin Messages -->
 							<div class="four wide computer sixteen wide phone centered column">
 								<div class="ui raised segment">
-								    <div class="content">
-								        <div class="ui centered grid">
-								        	<div class="row">
-								        		<div class="six wide computer column">
-								        			<div class="ui small image simpleimage itemcolor2">
-			                                            	<i class="inbox icon simpleicon"></i>
-			                                        </div>
-								        		</div>
-								        		<div class="ten wide computer column">
-								        			<span><h4>Messages</h4></span>
-								        			2341 Messages
-								        			<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
-								        		</div>
-								        	</div>
-								        </div>
-								    </div>
+									<div class="content">
+										<div class="ui centered grid">
+											<div class="row">
+												<div class="six wide computer column">
+													<div class="ui small image simpleimage itemcolor2">
+															<i class="inbox icon simpleicon"></i>
+													</div>
+												</div>
+												<div class="ten wide computer column">
+													<span><h4>Messages</h4></span>
+													2341 Messages
+													<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!-- End Messages -->
 							<!-- Begin Downloads -->
 							<div class="four wide computer sixteen wide phone centered column">
 								<div class="ui raised segment">
-								    <div class="content">
-								        <div class="ui centered grid">
-								        	<div class="row">
-								        		<div class="six wide computer column">
-								        			<div class="ui small image simpleimage itemcolor3">
-			                                            	<i class="download icon simpleicon"></i>
-			                                        </div>
-								        		</div>
-								        		<div class="ten wide computer column">
-								        			<span><h4>Downloads</h4></span>
-								        			5541 Downloads
-								        			<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
-								        		</div>
-								        	</div>
-								        </div>
-								    </div>
+									<div class="content">
+										<div class="ui centered grid">
+											<div class="row">
+												<div class="six wide computer column">
+													<div class="ui small image simpleimage itemcolor3">
+															<i class="download icon simpleicon"></i>
+													</div>
+												</div>
+												<div class="ten wide computer column">
+													<span><h4>Downloads</h4></span>
+													5541 Downloads
+													<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!-- End Downloads -->
 							<!-- Begin Users -->
 							<div class="four wide computer sixteen wide phone centered column">
 								<div class="ui raised segment">
-								    <div class="content">
-								        <div class="ui centered grid">
-								        	<div class="row">
-								        		<div class="six wide computer column">
-								        			<div class="ui small image simpleimage itemcolor4">
-			                                            	<i class="user icon simpleicon"></i>
-			                                        </div>
-								        		</div>
-								        		<div class="ten wide computer column">
-								        			<span><h4>Users</h4></span>
-								        			9578 Users
-								        			<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
-								        		</div>
-								        	</div>
-								        </div>
-								    </div>
+									<div class="content">
+										<div class="ui centered grid">
+											<div class="row">
+												<div class="six wide computer column">
+													<div class="ui small image simpleimage itemcolor4">
+															<i class="user icon simpleicon"></i>
+													</div>
+												</div>
+												<div class="ten wide computer column">
+													<span><h4>Users</h4></span>
+													9578 Users
+													<a class="ui tiny label simplelable"><i class="eye icon"></i> Details</a>
+												</div>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
 							<!-- End Users -->
@@ -252,17 +251,6 @@
 									<div class="ui divider"></div>
 									<button id="rand-pie" class="ui blue button simplelable">Randomize Data</button>
 								</div><br>
-							</div>
-							<div class="sixteen wide computer sixteen wide phone column justifed">
-								<h3>EXAMPLE TITLE</h3>
-								<div class="ui divider"></div>
-								<div class="ui piled segment">
-									<a class="ui blue right ribbon label">Chart.js Line Chart - Multi Axis</a>
-									<canvas id="example-line"></canvas>
-									<div class="ui divider"></div>
-									<button id="rand-line" class="ui blue button simplelable">Randomize Data</button>
-								</div>
-								<br><br><br>
 							</div>
 						</div>
 					</div>
