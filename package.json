@@ -41,7 +41,7 @@
     "gulp-sass-glob": "^1.1.0",
     "gulp-useref": "^5.0.0",
     "jquery": "^3.6.0",
-    "jszip": "^3.6.0",
+    "jszip": "^3.8.0",
     "pdfmake": "^0.1.71"
   },
   "dependencies": {
